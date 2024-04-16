@@ -1,6 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    overflow: auto;
     font-family: "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
 }
 
@@ -11,7 +12,7 @@ body, html {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(to bottom, #fff, #fff, #fff, #fff, #a6a6a6);
+    background: linear-gradient(to bottom, #fff7ee, #fff7ee, #fff7ee, #fff7ee, #a6a6a6);
     animation: gradientAnimation 15s ease infinite;
 }
 
@@ -75,8 +76,9 @@ header {
 }
 
 .list-group-item {
-    background-color: hsla(0, 0%, 0%, 0.2);
-    backdrop-filter: saturate(180%) blur(40px);
+    background-color: hsla(0, 0%, 100%, 0.2);
+    backdrop-filter: blur(33px);
+    box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
     border: none;
     margin-bottom: 20px;
     padding: 20px;
@@ -106,3 +108,41 @@ header {
     background-color: #24292e;
     border-color: #24292e;
 }
+
+.custom-list {
+    font-family: "Space Mono", monospace;
+    padding-left: 50px;
+  }
+  
+  .custom-list-item {
+    color: #4F4F4F;
+    padding-left: 16px;
+    margin-top: 24px;
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .custom-list-item::before {
+    content: "";
+    display: block;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    position: absolute;
+    top: -10px;
+    left: -43px;
+  }
+  
+  .custom-list-item strong {
+    color: #292929;
+  }
+  
+  .custom-list.alternating-colors .custom-list-item:nth-child(odd)::before {
+    border-color: #0BAD02;
+  }
+  
+  .custom-list.alternating-colors .custom-list-item:nth-child(even)::before {
+    border-color: #2378D5;
+  }
