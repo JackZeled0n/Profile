@@ -136,7 +136,7 @@ header {
 }
 .gradiente-mouse {
     width: 100%;
-    background-image: radial-gradient( circle farthest-side at var(--x, 100px) var(--y, 100px), #f9e4c9 0%, transparent 100% );
+    background-image: radial-gradient( 600px at var(--x, 100px) var(--y, 100px), #f9e4c9 0%, transparent 80%);
     align-items: center;
     justify-content: center;
 }
