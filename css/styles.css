@@ -2,8 +2,14 @@ body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
-    font-family: "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+
 .background-animation {
     position: fixed;
     top: 0;
