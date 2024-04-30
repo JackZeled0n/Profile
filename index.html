@@ -14,23 +14,23 @@
       <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
       <meta name="theme-color" content="#ffffff">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       <link rel="preconnect" href="https://rsms.me/">
       <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
       <link rel="stylesheet" href="css/styles.css" />
    </head>
-   <body class="gradiente-mouse" style="height: 100vh;">
+   <body style="height: 100vh;">
       <div class="gradiente-mouse" id="hero">
          <div class="background-animation"></div>
          <div class="container text-reveal">
             <header class="mt-5">
-               <h1 style="font-size: 3rem; font-weight: 700; text-decoration: none;">Jake Zeledon</h1>
+               <h1 class="title-color-text" style="font-size: 3rem; font-weight: 700; text-decoration: none;">Jake Zeledon</h1>
                <h2 class="font-medium">Fullstack Software Engineer</h2>
-               <a href="pdf/Jake-CV.pdf" target="_blank" class="btn btn-primary mt-2">Download CV</a>
+               <a href="pdf/Jake-CV.pdf" target="_blank" class="btn mt-2" style="background-color: #004080; color: #fff">Download CV</a>
                <br />
                <br />
-               <a href="https://www.linkedin.com/in/jakezeledon/" class="btn btn-linkedin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-               <a href="https://github.com/JackZeled0n" class="btn btn-github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+               <a href="https://www.linkedin.com/in/jakezeledon/" class="btn btn-linkedin" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+               <a href="https://github.com/JackZeled0n" class="btn btn-github" target="_blank"><i class="bi bi-github"></i> GitHub</a>
             </header>
             <section class="about">
                <p style="font-size: 1.25rem; line-height: 1.75rem;">
@@ -39,54 +39,95 @@
                </p>
             </section>
             <section class="experience">
-               <h2 class="fw-600">Experience</h2>
+               <h2 class="fw-600 title-color-text">Experience</h2>
                <br />
-               <ul class="list-group">
-                  <li class="list-group-item">
-                     <div class="row align-items-center">
-                        <div class="col-md-3">
-                           <p class="experience-info ms-3">
-                              Feb 2023 - Sept 2023
-                           </p>
+               
+               <div class="d-flex justify-content-center">
+                  <div class="col-10">
+                     <div class="row">
+                        <div class="col-md-4">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                           <button class="nav-link active mb-2 text-start" id="job1-tab" data-bs-toggle="pill" data-bs-target="#job1" type="button" role="tab" aria-controls="job1" aria-selected="true">Nicasource</button>
+                           <button class="nav-link mb-2 text-start" id="job2-tab" data-bs-toggle="pill" data-bs-target="#job2" type="button" role="tab" aria-controls="job2" aria-selected="false">Atlas Primer</button>
+                           <button class="nav-link text-start" id="job4-tab" data-bs-toggle="pill" data-bs-target="#job4" type="button" role="tab" aria-controls="job4" aria-selected="false">Nicaraguan Social Security Institute</button>
+                           <button class="nav-link mb-2 text-start" id="job3-tab" data-bs-toggle="pill" data-bs-target="#job3" type="button" role="tab" aria-controls="job3" aria-selected="false">Atomic developers</button>
                         </div>
-                        <div class="col-md-9">
-
-                           <h3 class="experience-title ms-3">Software developer · Nicasource</h3>
-                           <ol class="custom-list alternating-colors">
-                              <li class="custom-list-item">
-                                 <p>
-                                    Managed the conversational development team, providing guidance to help them achieve our objectives and maintain a commitment to excellence in crafting innovative and impactful conversational
-                                    experiences.
-                                 </p>
-                              </li>
-                              <li class="custom-list-item">
-                                 <p>Headed the implementation of validation, code refactoring, efficient deployment management, and the successful certification of multiple Alexa skills.</p>
-                              </li>
-                              <li class="custom-list-item">
-                                 <p>Created a visually appealing landing page for a Slack bot, utilizing various web development skills to ensure an engaging user experience.</p>
-                              </li>
-                              <li class="custom-list-item">
-                                 <p>Engineered an efficient and user-friendly online class scheduling web application, improving the overall user experience.</p>
-                              </li>
-                              <li class="custom-list-item">
-                                 <p>Enhanced the functionality of a Slack chatbot by integrating new endpoints into its API.</p>
-                              </li>
-                              <br/>
-                              <span class="badge rounded-pill bg-light text-dark">Javascript</span>
-                              <span class="badge rounded-pill bg-light text-dark">Node.js</span>
-                              <span class="badge rounded-pill bg-light text-dark">Bolt.js</span>
-                              <span class="badge rounded-pill bg-light text-dark">Html & Css</span>
-                              <span class="badge rounded-pill bg-light text-dark">Jekyll</span>
-                              <span class="badge rounded-pill bg-light text-dark">Git</span>
-                              <span class="badge rounded-pill bg-light text-dark">Google Analytics</span>
-                           </ol>
+                        </div>
+                        <div class="col-md-8">
+                        <div class="tab-content" id="v-pills-tabContent">
+                           <div class="tab-pane fade show active" id="job1" role="tabpanel" aria-labelledby="job1-tab">
+                              <div class="card card-color shadow-sm rounded" style="border: none;">
+                                 <div class="card-body">
+                                    <h5>Engineering team lead · <a target="_blank" href="https://nicasource.com/" style="color: rgb(241, 60, 69); text-decoration: none;"> Nicasource <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>                                        
+                                    <div class="text-slate-500" aria-hidden="true">Engineering team lead · Apr 2022 - Sep 2023</div>
+                                    <div class="text-slate-500" aria-hidden="true">Software developer · Jul 2021 - Mar 2022</div>
+                                    <br>
+                                    <p>Build, style, and ship high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, Struck, and more. 
+                                       Provide leadership within conversational development department through close collaboration, knowledge shares, and spearheading the creation of internal tools.</p>                                     
+                                    <span class="badge rounded-pill bg-light title-color-text">Alexa Skills Kit</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Angular</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">AWS</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Bolt.js</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Docker</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Html & Css</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Javascript</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Jovo framework</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Nest.js</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Node.js</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Serverless</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Typescript</span>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="job2" role="tabpanel" aria-labelledby="job2-tab">
+                              <div class="card card-color shadow-sm rounded" style="border: none;">
+                                 <div class="card-body">
+                                    <h5>Voice developer · <a target="_blank" href="https://www.atlasprimer.com/" style="color: rgb(18,83,84); text-decoration: none;"> Atlas primer <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
+                                    <div class="text-slate-500" aria-hidden="true">Oct 2021 - May 2022</div>
+                                    <br>
+                                    <p>Build and maintain critical components used to construct Atlas Primer skill. Collaborate closely with cross-functional teams, including developers and key stakeholders such as the CEO, who also serves as the Founder, 
+                                       to implement and advocate for best practices into the skill. This collaborative effort ensures alignment with strategic objectives and fosters a culture of innovation and excellence throughout the organization.</p>
+                                    <span class="badge rounded-pill bg-light title-color-text">Alexa</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">AWS</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Google action</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Javascript</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Jovo framework</span>
+                                    <span class="badge rounded-pill bg-light title-color-text">Node.js</span>
+                                 </div>
+                              </div>
+                           </div>
+                           
+                           <div class="tab-pane fade" id="job4" role="tabpanel" aria-labelledby="job4-tab">
+                              <div class="card card-color shadow-sm rounded" style="border: none;">
+                                 <div class="card-body">
+                                    <h5>Programmer · <span style="color: rgb(60, 76, 164); text-decoration: none;"> Nicaraguan Social Security Institute</span></h5>
+                                    <div class="text-slate-500" aria-hidden="true">Programmer · Feb 2021 - Jun 2021</div>
+                                    <div class="text-slate-500" aria-hidden="true">System integrator · Apr 2018 - Jan 2021</div>
+                                    <div class="text-slate-500" aria-hidden="true">Digitalizer · Apr 2017 - Mar 2018</div>
+                                    <br>
+                                    <p>Coming...</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="job3" role="tabpanel" aria-labelledby="job3-tab">
+                              <div class="card card-color shadow-sm rounded" style="border: none;">
+                                 <div class="card-body">
+                                    <h5>Software developer · <a target="_blank" href="https://github.com/AtomicDevelopers" style="color: rgb(233, 72, 64); text-decoration: none;"> Atomic developers <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
+                                    <div class="text-slate-500" aria-hidden="true">2017 - Present</div>
+                                    <br>
+                                    <p>Coming...</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                         </div>
                      </div>
-                  </li>
-               </ul>
+                  </div>
+               </div>
             </section>
          </div>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
       <script src="js/script.js"></script>
    </body>
 </html>

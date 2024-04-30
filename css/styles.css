@@ -6,6 +6,10 @@ body, html {
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
+.title-color-text {
+    color: #004080;
+}
+
 @supports (font-variation-settings: normal) {
     :root { font-family: InterVariable, sans-serif; }
 }
@@ -142,7 +146,49 @@ header {
 }
 .gradiente-mouse {
     width: 100%;
+    height: 100vh;
     background-image: radial-gradient( 600px at var(--x, 100px) var(--y, 100px), #f9e4c9 0%, transparent 80%);
     align-items: center;
     justify-content: center;
+}
+
+.nav-pills {
+    position: relative; 
+  }
+  
+  .nav-pills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px; 
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .nav-pills .nav-link.active::before {
+    left: -2px;
+  }
+  
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    border-left: 2px solid #004080;
+    border-radius: 0px;
+    background-color: rgba(249,228,201, 0.5);
+    font-weight: 600;
+    color: #004080;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(248, 249, 250, 0.7);
+  }
+  .nav-pills .nav-link.active:hover {
+    background-color: #fff7ee;
+  }
+  
+  .text-slate-500 {
+    color: rgb(100 116 139 / 1);
+}
+
+.card-color {
+    background-color: rgba(248, 249, 250, 0.7);
 }
