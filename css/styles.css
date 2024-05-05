@@ -352,6 +352,12 @@ button.header-menu.header-menu{
 .header-menu .active.header-menu,.blur.header-menu .work.header-menu {
     background: var(--color-white50) 
 }
+.jake {
+    display: inline;
+    color: #004080; /* Color de texto por defecto */
+    transition: color 0.3s ease;
+}
 .jake:hover {
+    color: #ffc107;
     cursor:url('../img/jake-pointer.png'), auto;
 }
