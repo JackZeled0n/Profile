@@ -352,3 +352,6 @@ button.header-menu.header-menu{
 .header-menu .active.header-menu,.blur.header-menu .work.header-menu {
     background: var(--color-white50) 
 }
+.jake:hover {
+    cursor:url('../img/jake-pointer.png'), auto;
+}
