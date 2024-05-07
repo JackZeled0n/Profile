@@ -37,6 +37,9 @@ body, html {
 .title-color-text {
     color: #004080;
 }
+.pill-color-text {
+    color: #004080;
+}
 @supports (font-variation-settings: normal) {
     :root {
         font-family: InterVariable, sans-serif;
@@ -191,6 +194,9 @@ header {
     width: 2px;
     transition: left 0.3s ease-in-out;
 }
+.nav-pills .nav-link {
+    color: #212529;
+}
 .nav-pills .nav-link.active::before {
     left: -2px;
 }
@@ -202,9 +208,11 @@ header {
     color: #004080;
 }
 .nav-link:hover {
+    color:#004080;
     background-color: rgba(248, 249, 250, 0.7);
 }
 .nav-pills .nav-link.active:hover {
+    color: #004080;
     background-color: #fff7ee;
 }
 .text-slate-500 {
@@ -354,10 +362,69 @@ button.header-menu.header-menu{
 }
 .jake {
     display: inline;
-    color: #004080; /* Color de texto por defecto */
-    transition: color 0.3s ease;
 }
 .jake:hover {
     color: #ffc107;
     cursor:url('../img/jake-pointer.png'), auto;
+}
+
+/* Dark mode  */
+.icon-button {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+}
+
+.icon-button:active {
+    transform: scale(0.95);
+}
+
+.icon-button img {
+    width: 45px;
+}
+
+.dark-mode {
+    .background-animation {
+        background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+    }
+    .title-color-text {
+        color: #fff;
+    }
+    .text-dark {
+        color: #fff !important;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        border-left: 2px solid #004080;
+        color: #004080;
+        background-color: hsla(0, 0%, 100%, .7);
+    }
+    .nav-pills .nav-link.active:hover {
+        color: #004080;
+    }
+    .nav-pills .nav-link {
+        color: #fff;
+    }
+    .nav-link:hover {
+        color:#004080;
+        background-color: rgba(248, 249, 250, 0.9);
+    }
+    .card-color {
+        background-color: hsla(0, 0%, 100%, .8);
+    }
+    
+    .card-color:hover {
+        background-color: rgba(248, 249, 250, 0.9);
+    }
 }
