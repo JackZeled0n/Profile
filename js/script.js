@@ -14,6 +14,12 @@
 //     };
 // });
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-CXDB014HWL');
+
 const sunButton = document.getElementById('sun-button');
 const sunIcon = document.getElementById('sun-icon');
 const body = document.getElementById('body');
