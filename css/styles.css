@@ -1,10 +1,10 @@
 :root{
-    --color-white50:hsla(0, 0%, 100%, .5); 
+    --color-white50:hsla(0, 0%, 100%, .5);
     --color-light-border:rgba(0,0,0,.1);
     --font-link:clamp(.875rem, .7985rem + .3265vw, 1.125rem);
     --max-width:1600px;
-    --zindex-base:1; 
-    --zindex-nav:1000; 
+    --zindex-base:1;
+    --zindex-nav:1000;
     --color-backdrop: hsla(45, 17%, 95%, .8);
     --14px:.875rem;
     --15px:.9375rem;
@@ -25,7 +25,6 @@
     --spacing-xs:max( var(--14px), calc(var(--14px) + (28 - 14) * ((100vw - 375px) / (1600 - 375))) );
     --spacing-xxs:max( calc(var(--14px) / 2), calc((var(--14px) / 2) + (14 - 7) * ((100vw - 375px) / (1600 - 375))) );
 }
-
 body, html {
     margin: 0;
     padding: 0;
@@ -45,15 +44,25 @@ body, html {
         font-family: InterVariable, sans-serif;
    }
 }
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+.background-color-intro {
     background: linear-gradient(to bottom, #fff7ee, #fff7ee, #fff7ee, #fff7ee, #a6a6a6);
     animation: gradientAnimation 15s ease infinite;
+}
+#background {
+    height: auto;
+}
+@media (min-width: 992px) {
+    #background {
+        height: 100vh;
+        margin-top: -50px;
+   }
+}
+.background-animation {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 @keyframes gradientAnimation {
     0% {
@@ -177,7 +186,8 @@ header {
 }
 .gradiente-mouse {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background-image: radial-gradient( 600px at var(--x, 100px) var(--y, 100px), #f9e4c9 0%, transparent 80%);
     align-items: center;
     justify-content: center;
@@ -225,11 +235,9 @@ header {
     cursor: pointer;
     transition: all .2s var(ease-in-out);
 }
-
 .card-color:hover {
     background-color: rgba(248, 249, 250, 0.7);
 }
-
 @keyframes bounce {
     0% {
         transform: translateY(0);
@@ -367,8 +375,7 @@ button.header-menu.header-menu{
     color: #ffc107;
     cursor:url('../img/jake-pointer.png'), auto;
 }
-
-/* Dark mode  */
+/* Dark mode */
 .icon-button {
     position: fixed;
     top: 20px;
@@ -382,49 +389,47 @@ button.header-menu.header-menu{
     width: 40px;
     height: 40px;
 }
-
 .icon-button:hover {
     transform: scale(1.1);
 }
-
 .icon-button:active {
     transform: scale(0.95);
 }
-
 .icon-button img {
     width: 45px;
 }
-
 .dark-mode {
-    .background-animation {
+    .background-color-intro {
         background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
-    }
+   }
     .title-color-text {
         color: #fff;
-    }
+   }
     .text-dark {
         color: #fff !important;
-    }
+   }
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
         border-left: 2px solid #004080;
         color: #004080;
         background-color: hsla(0, 0%, 100%, .7);
-    }
+   }
     .nav-pills .nav-link.active:hover {
         color: #004080;
-    }
+   }
     .nav-pills .nav-link {
         color: #fff;
-    }
+   }
     .nav-link:hover {
         color:#004080;
         background-color: rgba(248, 249, 250, 0.9);
-    }
+   }
     .card-color {
         background-color: hsla(0, 0%, 100%, .8);
-    }
-    
+   }
     .card-color:hover {
         background-color: rgba(248, 249, 250, 0.9);
-    }
+   }
+    .gradiente-mouse {
+        background-image: radial-gradient(600px at var(--x, 100px) var(--y, 100px), #63e 0%, transparent 80%);
+   }
 }
