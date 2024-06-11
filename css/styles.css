@@ -444,6 +444,9 @@ button.header-menu.header-menu{
     .image-wp {
         top: 0px;
    }
+   .image-sight {
+    right: -15px;
+   }
 }
 @media (max-width: 991px) {
     .hide {
