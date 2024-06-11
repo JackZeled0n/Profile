@@ -374,7 +374,7 @@ button.header-menu.header-menu{
 }
 .jake:hover {
     color: #ffc107;
-    cursor:url('../img/jake-pointer.png'), auto;
+    cursor:url('../img/jake-cursor.png'), auto;
 }
 /* Speaking section */
 .wave {
@@ -439,6 +439,21 @@ button.header-menu.header-menu{
     top: -50px;
     left: -20%;
 }
+/* Back to top */
+.btn_back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 96px;
+    height: 120px;
+    display: none;
+    background-image: url('../img/jake-back-top.png');
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+/* Medias queries */
 @media (min-width: 992px) and (max-width: 1200px) {
     .image-wp {
         top: 0px;
@@ -458,6 +473,10 @@ button.header-menu.header-menu{
    }
     .mt-speaking{
         top: 20px;
+   }
+    .btn_back-to-top {
+        width: 71px;
+        height: 95px;
    }
 }
 /* Dark mode */
