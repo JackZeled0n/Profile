@@ -19,31 +19,29 @@
       <link rel="stylesheet" href="css/inter.css">
       <link rel="stylesheet" href="css/styles.css" />
    </head>
-   <body id="body" >
-
-      <!-- <header class="header-menu">
-               <nav class="header-menu">
-                  <ul class="main header-menu blur">
-                     <li class="header-menu"><a href="/" class="main-link header-menu active">Me <span class="slash header-menu">/</span></a> </li>
-                     <li class="header-menu"><a href="" class="main-link header-menu">Experience </a> </li>
-                     <li class="header-menu"><a href="" class="main-link header-menu">Projects </a> </li>
-                     <li class="header-menu"><a href="" class="main-link header-menu">Speaking </a> </li>
-                     <li class="header-menu"><button class="header-menu">Contact</button> </li>
-                  </ul>
-               </nav>
-            </header> -->
-      <div class="background-color-intro">
-         <div class="gradiente-mouse" id="hero"> 
-
+   <body id="body">
+      <header class="header-menu">
+         <nav class="header-menu">
+            <ul class="main header-menu blur">
+               <li class="header-menu"><a href="#me" class="main-link header-menu active">Me <span class="slash header-menu">/</span></a></li>
+               <li class="header-menu"><a href="#experience" class="main-link header-menu">Experience </a></li>
+               <li class="header-menu"><a href="#speaking" class="main-link header-menu">Speaking </a></li>
+            </ul>
+         </nav>
+      </header>
+      <section class="background-color-intro"  id="me">
+         <div class="gradiente-mouse" id="hero">
             <button id="sun-button" class="icon-button"><img id="sun-icon" src="img/theme-light.svg" width="40" height="40" alt="Theme light"></button>
             <br>
-
             <div id="background" class="background-animation">
                <div class="container d-flex align-items-center justify-content-center h-100">
                   <div class="row">
                      <div class="col-12">
                         <div class="text-center">
-                           <h1 class="title-color-text" id="name" style="font-size: 92px; font-weight: 700; text-decoration: none;"><p class="jake">Jake</p> Zeledon</h1>
+                           <h1 class="title-color-text" id="name" style="font-size: 92px; font-weight: 700; text-decoration: none;">
+                              <p class="jake">Jake</p>
+                              Zeledon
+                           </h1>
                            <h2 class="font-medium text-dark">Fullstack Software Engineer</h2>
                            <a href="pdf/Resume.pdf" target="_blank" class="btn mt-2" style="background-color: #004080; color: #fff">Download CV</a>
                            <br />
@@ -53,16 +51,16 @@
                         </div>
                      </div>
                      <div class="col-12">
-                        <section class="about">
+                        <div class="about">
                            <p class="text-dark" style="font-size: 1.25rem; line-height: 1.75rem;">
                               I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and
                               delivering outstanding results. My commitment to excellence drives me to continually improve and push boundaries in the field of software development.
                            </p>
-                        </section>
+                        </div>
                      </div>
-                     <div class="col-12">
-                        <section class="experience">
-                           <h2 class="fw-600 title-color-text" id="experience">Experience<span class="text-dot">.</span></h2>
+                     <div class="col-12" >
+                        <section class="experience" id="experience">
+                           <h2 class="title-color-text text-highlight">Experience<span class="text-dot">.</span></h2>
                            <br />
                            <div class="d-flex justify-content-center">
                               <div class="col-10">
@@ -180,12 +178,44 @@
                         </section>
                      </div>
                   </div>
-               
-
-                  
                </div>
             </div>
-            
+            <section id="speaking"></section>
+            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+               <path class="wave" fill-opacity="1" d="M0,0L48,5.3C96,11,192,21,288,37.3C384,53,480,75,576,80C672,85,768,75,864,53.3C960,32,1056,0,1152,0C1248,0,1344,32,1392,48L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+         </div>
+      </section>
+      <div class="background-speaking">
+         <div class="container d-flex">
+            <div class="row justify-content-center align-items-center img">
+               <div class="col-12 text-center">
+                  <h2 class="title-color-text text-highlight">
+                     Speaking.
+                  </h2>
+                  <br/>
+               </div>
+               <div class="col-12 col-lg-6 speaking">
+                  <p class="speaking-text">
+                     As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp.
+                  </p>
+               </div>
+               <div class="col-10 col-lg-6 position-relative frame mt-speaking">
+                  <img src="img/ieee.JPG" class="img-fluid" alt="ieee sight puerto cabezas">
+                  <figcaption class="figcaption-sight">
+                     ISOC SIGHT Nicaragua Telecenter 2017
+                  </figcaption>
+                  <div class="position-absolute frame image-sight hide">
+                     <img src="img/ieeeteam.jpg" class="img-fluid " alt="ieee sight team">
+                  </div>
+               </div>
+               <div class="col-10 col-lg-8 position-relative frame image-wp mb-3">
+                  <img src="img/wdall.jpg" class="img-fluid" alt="wordpress day 2023">
+                  <figcaption class="figcaption-wp">
+                     KidsCamp Managua 2023
+                  </figcaption>
+               </div>
+            </div>
          </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

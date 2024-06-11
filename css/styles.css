@@ -45,8 +45,10 @@ body, html {
    }
 }
 .background-color-intro {
-    background: linear-gradient(to bottom, #fff7ee, #fff7ee, #fff7ee, #fff7ee, #a6a6a6);
-    animation: gradientAnimation 15s ease infinite;
+    background: #f0ede5;
+}
+.background-speaking {
+    background: #FBF6F1;
 }
 #background {
     height: auto;
@@ -54,7 +56,6 @@ body, html {
 @media (min-width: 992px) {
     #background {
         height: 100vh;
-        margin-top: -50px;
    }
 }
 .background-animation {
@@ -336,7 +337,7 @@ button.header-menu.header-menu{
 }
 .main-link.header-menu.header-menu{
     padding:calc(var(--16px) - 10px) calc(var(--16px) - 6px);
-    margin:0 3px 
+    margin:0 3px;
 }
 @media (min-width:768px){
     .main-link.header-menu.header-menu{
@@ -367,7 +368,7 @@ button.header-menu.header-menu{
     -webkit-backdrop-filter: blur(20px) saturate(1.7) 
 }
 .header-menu .active.header-menu,.blur.header-menu .work.header-menu {
-    background: var(--color-white50) 
+    background: var(--color-white50);
 }
 .jake {
     display: inline;
@@ -375,6 +376,87 @@ button.header-menu.header-menu{
 .jake:hover {
     color: #ffc107;
     cursor:url('../img/jake-pointer.png'), auto;
+}
+/* Speaking section */
+.wave {
+    fill: #FBF6F1;
+}
+.text-highlight {
+    font-weight: 650;
+    font-size: 3em;
+}
+.sie-press_1 {
+    left: 971px;
+    bottom: -25px;
+    width: 705px;
+    height: 815px;
+    position: absolute;
+}
+.speaking-text {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+    color: #212529;
+}
+.figcaption-sight {
+    position: absolute;
+    top: -1.2rem;
+    right: 1.8rem;
+    padding: .5rem 1.25rem;
+    background-color: hsl(45, 98%, 51%);
+    color: hsl(0, 0%, 100%);
+    border: solid 2px hsl(0, 0%, 25%);
+    -webkit-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    -moz-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+}
+.figcaption-wp {
+    position: absolute;
+    top: -1.2rem;
+    left: 1.8rem;
+    padding: .5rem 1.25rem;
+    background-color: hsl(45, 98%, 51%);
+    color: hsl(0, 0%, 100%);
+    border: solid 2px hsl(0, 0%, 25%);
+    -webkit-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    -moz-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+}
+.frame {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.image-sight {
+    bottom: -200px;
+    right: -50px;
+    width: 70%;
+    height: auto;
+}
+.hide {
+    visibility: visible;
+    display: block;
+}
+.image-wp {
+    top: -50px;
+    left: -20%;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .image-wp {
+        top: 0px;
+   }
+}
+@media (max-width: 991px) {
+    .hide {
+        visibility: hidden;
+        display: none;
+   }
+    .image-wp {
+        top: 50px;
+        left: 0px;
+   }
+    .mt-speaking{
+        top: 20px;
+   }
 }
 /* Dark mode */
 .icon-button {
@@ -402,6 +484,12 @@ button.header-menu.header-menu{
 .dark-mode {
     .background-color-intro {
         background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+   }
+    .background-speaking {
+        background: radial-gradient(125% 125% at 50% 10%, #000 40%, #000 100%);
+   }
+    .wave {
+        fill: #000;
    }
     .title-color-text {
         color: #fff;
@@ -432,5 +520,14 @@ button.header-menu.header-menu{
    }
     .gradiente-mouse {
         background-image: radial-gradient(600px at var(--x, 100px) var(--y, 100px), #63e 0%, transparent 80%);
+   }
+    .speaking-text {
+        color: #fff;
+   }
+    .figcaption-sight {
+        background-color: hsl(256, 85%, 57%);
+   }
+    .figcaption-wp {
+        background-color: hsl(256, 85%, 57%);
    }
 }
