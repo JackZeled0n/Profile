@@ -377,6 +377,15 @@ button.header-menu.header-menu{
     cursor:url('../img/jake-cursor.png'), auto;
 }
 /* Speaking section */
+.jake-link {
+    display: inline;
+    text-decoration: none; 
+    color: #fff;
+}
+.jake-link:hover {
+    color: #004080;
+    cursor:url('../img/jake-cursor.png'), auto;
+}
 .wave {
     fill: #FBF6F1;
 }
