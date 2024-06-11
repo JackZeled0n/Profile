@@ -462,6 +462,9 @@ button.header-menu.header-menu{
     border: none;
     cursor: pointer;
 }
+.btn_back-to-top:hover {
+    filter: drop-shadow(0 0 0.75rem #ffc107);
+}
 /* Medias queries */
 @media (min-width: 992px) and (max-width: 1200px) {
     .image-wp {
