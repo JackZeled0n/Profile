@@ -417,6 +417,18 @@ button.header-menu.header-menu{
     -moz-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
     box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
 }
+.figcaption-cs50 {
+    position: absolute;
+    top: -1.2rem;
+    right: 1.8rem;
+    padding: .5rem 1.25rem;
+    background-color: hsl(45, 98%, 51%);
+    color: hsl(0, 0%, 100%);
+    border: solid 2px hsl(0, 0%, 25%);
+    -webkit-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    -moz-box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+    box-shadow: .3rem .3rem 0 0 hsl(0, 0%, 25%);
+}
 .figcaption-wp {
     position: absolute;
     top: -1.2rem;
@@ -468,10 +480,15 @@ button.header-menu.header-menu{
 /* Medias queries */
 @media (min-width: 992px) and (max-width: 1200px) {
     .image-wp {
-        top: 0px;
+        top: 20px;
    }
     .image-sight {
         right: -15px;
+   }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .image-wp {
+        top: 20px;
    }
 }
 @media (max-width: 991px) {
@@ -480,7 +497,7 @@ button.header-menu.header-menu{
         display: none;
    }
     .image-wp {
-        top: 50px;
+        top: 30px;
         left: 0px;
    }
     .mt-speaking{
@@ -562,6 +579,9 @@ button.header-menu.header-menu{
    }
     .figcaption-wp {
         background-color: hsl(256, 85%, 57%);
+   }
+   .figcaption-cs50 {
+    background-color: hsl(256, 85%, 57%);
    }
     .frame {
         box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
