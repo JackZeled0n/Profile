@@ -125,25 +125,34 @@ header {
     padding: 20px;
     border-radius: 10px;
 }
+
+.btn-download {
+    background-color: #004080; 
+    color: #fff;
+    &:hover {
+        color: #fff;
+        background-color: #0066cc;
+    }
+}
 .btn-linkedin {
     color: #0077B5;
     background-color: #FFFFFF;
     border-color: #0077B5;
-}
-.btn-linkedin:hover {
-    color: #FFFFFF;
-    background-color: #0077B5;
-    border-color: #0077B5;
+    &:hover { 
+        color: #FFFFFF;
+        background-color: #0077B5;
+        border-color: #0077B5;
+    }
 }
 .btn-github {
     color: #FFFFFF;
     background-color: #333333;
     border-color: #333333;
-}
-.btn-github:hover {
-    color: #FFFFFF;
-    background-color: #24292e;
-    border-color: #24292e;
+    &:hover {
+        color: #FFFFFF;
+        background-color: #24292e;
+        border-color: #24292e;
+    }
 }
 .custom-list {
     font-family: "Space Mono", monospace;
