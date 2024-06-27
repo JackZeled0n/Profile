@@ -90,3 +90,9 @@ function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+// Simple Parallax
+var parallaxImages = document.querySelectorAll('.parallax-image');
+    parallaxImages.forEach(function(image) {
+    new simpleParallax(image);
+});
