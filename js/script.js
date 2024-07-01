@@ -90,3 +90,11 @@ function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+const elements = ['.my-atropos-ieee', '.my-atropos-cs50', '.my-atropos-cs50-mobile', '.my-atropos-kidscamp'];
+
+elements.forEach(selector => {
+    Atropos({
+        el: selector
+    });
+});
