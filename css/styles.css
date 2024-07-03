@@ -540,6 +540,29 @@ button.header-menu.header-menu{
 .icon-button img {
     width: 45px;
 }
+.language-button {
+    position: fixed;
+    top: 70px;
+    right: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s, background-color 0.2s;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.language-button img {
+    width: 45px;
+}
+.language-button:hover {
+    transform: scale(1.1);
+}
+.language-button:active {
+    transform: scale(0.95);
+}
 .dark-mode {
     .background-color-intro {
         background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);

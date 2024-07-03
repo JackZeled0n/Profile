@@ -25,14 +25,15 @@
          <nav class="header-menu">
             <ul class="main header-menu blur">
                <li class="header-menu"><a href="#me" class="main-link header-menu active">Me <span class="slash header-menu">/</span></a></li>
-               <li class="header-menu"><a href="#experience" class="main-link header-menu">Experience </a></li>
-               <li class="header-menu"><a href="#speaking" class="main-link header-menu">Speaking </a></li>
+               <li class="header-menu"><a href="#experience" class="main-link header-menu" data-key="experienceMenu">Experiences </a></li>
+               <li class="header-menu"><a href="#speaking" class="main-link header-menu" data-key="speakingMenu">Speaking </a></li>
             </ul>
          </nav>
       </header>
       <section class="background-color-intro"  id="me">
          <div class="gradiente-mouse" id="hero">
             <button id="sun-button" class="icon-button"><img id="sun-icon" src="img/theme-light.svg" width="40" height="40" alt="Theme light"></button>
+            <button id="lang-button" class="language-button"><img src="img/language.svg" width="40" height="40" alt="Change language"></button>
             <br>
             <div id="background" class="background-animation">
                <div class="container d-flex align-items-center justify-content-center h-100">
@@ -44,7 +45,7 @@
                               Zeledon
                            </h1>
                            <h2 class="font-medium text-dark">Fullstack Software Engineer</h2>
-                           <a href="pdf/Resume.pdf" target="_blank" class="btn mt-2 btn-download">Download CV</a>
+                           <a href="pdf/Resume.pdf" target="_blank" class="btn mt-2 btn-download" data-key="downloadCv">Download CV</a>
                            <br />
                            <br />
                            <a href="https://www.linkedin.com/in/jakezeledon/" class="btn btn-linkedin" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
@@ -53,7 +54,7 @@
                      </div>
                      <div class="col-12">
                         <div class="about">
-                           <p class="text-dark" style="font-size: 1.25rem; line-height: 1.75rem;">
+                           <p class="text-dark" style="font-size: 1.25rem; line-height: 1.75rem;" data-key="about">
                               I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and
                               delivering outstanding results. My commitment to excellence drives me to continually improve and push boundaries in the field of software development.
                            </p>
@@ -61,7 +62,7 @@
                      </div>
                      <div class="col-12" >
                         <section class="experience" id="experience">
-                           <h2 class="title-color-text text-highlight">Experience<span class="text-dot">.</span></h2>
+                           <h2 class="title-color-text text-highlight" data-key="experienceTitle">Experiences<span class="text-dot">.</span></h2>
                            <br />
                            <div class="d-flex justify-content-center">
                               <div class="col-10">
@@ -83,7 +84,7 @@
                                                    <div class="text-slate-500" aria-hidden="true">Engineering team lead · Apr 2022 - Sep 2023</div>
                                                    <div class="text-slate-500" aria-hidden="true">Software developer · Jul 2021 - Mar 2022</div>
                                                    <br>
-                                                   <p>Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck. 
+                                                   <p data-key="nicasource">Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck. 
                                                       As a Team Leader in the conversational development department, I provide leadership through close collaboration with the team, knowledge sharing, and spearheading the creation of internal tools to improve efficiency and work quality. 
                                                    </p>
                                                    <span class="badge rounded-pill bg-light pill-color-text">Alexa Skills Kit</span>
@@ -110,7 +111,7 @@
                                                    <h5>Voice Developer <a target="_blank" href="https://www.atlasprimer.com/" style="color: rgb(18,83,84); text-decoration: none;">@ Atlas primer <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
                                                    <div class="text-slate-500" aria-hidden="true">Oct 2021 - May 2022</div>
                                                    <br>
-                                                   <p>Built and maintained critical components used to improve Atlas Primer skill. Collaborated closely with cross-functional teams, including developers and key stakeholders,
+                                                   <p data-key="atlas">Built and maintained critical components used to improve Atlas Primer skill. Collaborated closely with cross-functional teams, including developers and key stakeholders,
                                                       to implement best practices and enhance the skill. This collaborative effort ensures alignment with strategic objectives and fosters a culture of innovation and excellence throughout the organization.
                                                    </p>
                                                    <span class="badge rounded-pill bg-light pill-color-text">Alexa</span>
@@ -131,7 +132,7 @@
                                                    <div class="text-slate-500" aria-hidden="true">System Integrator · Apr 2018 - Jan 2021</div>
                                                    <div class="text-slate-500" aria-hidden="true">Digitalization Operator · Apr 2017 - Mar 2018</div>
                                                    <br>
-                                                   <p>
+                                                   <p data-key="inss">
                                                       Led the QA team, overseeing the design, coding and implementation of a suite of testing tools and programs, covering database impacts, software scenarios, unit testing, end-to-end testing, error/bug retesting, and usability enhancements.
                                                       Moreover, I employed design patterns to optimize algorithm workflows, significantly boosting overall efficiency.
                                                    </p>
@@ -156,7 +157,7 @@
                                                    <h5>Frontend Developer <a target="_blank" href="https://github.com/AtomicDevelopers" style="color: rgb(233, 72, 64); text-decoration: none;">@ Atomic developers <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
                                                    <div class="text-slate-500" aria-hidden="true">2017 - 2024</div>
                                                    <br>
-                                                   <p>Led the development of enriched user experiences and dynamic interactions, employing advanced animation methodologies to elevate engagement to new heights. Spearheaded the creation of front-end elements, refined visual design aesthetics, and prototyped for seamless integration across responsive platforms. </p>
+                                                   <p data-key="atomic">Led the development of enriched user experiences and dynamic interactions, employing advanced animation methodologies to elevate engagement to new heights. Spearheaded the creation of front-end elements, refined visual design aesthetics, and prototyped for seamless integration across responsive platforms. </p>
                                                    <span class="badge rounded-pill bg-light pill-color-text">Adobe XD</span>
                                                    <span class="badge rounded-pill bg-light pill-color-text">Angular</span>
                                                    <span class="badge rounded-pill bg-light pill-color-text">Bootstrap</span>
@@ -191,15 +192,15 @@
          <div class="container d-flex">
             <div class="row justify-content-center align-items-center img">
                <div class="col-12 text-center">
-                  <h2 class="title-color-text text-highlight">
+                  <h2 class="title-color-text text-highlight" data-key="speakingTitle">
                      Speaking.
                   </h2>
                   <br/>
                </div>
                <div class="col-12 col-lg-6 speaking">
-                  <p class="speaking-text">
-                     As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within 
-                     <a href="https://managua.wordcamp.org/2023/" target="_blank" class="jake speaking-text" style="text-decoration: none;">WordCamp</a>. Additionally, I've made outstanding constributions to <a href="https://pll.harvard.edu/course/cs50-introduction-computer-science" target="_blank" class="jake speaking-text" style="text-decoration: none;">CS50x</a> as a member of the teaching staff at CS50x.ni.
+                  <p class="speaking-text" data-key="speakingText">
+                     As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within
+                     WordCamp. Additionally, I've made outstanding constributions to CS50x as a member of the teaching staff at CS50x.ni.
                   </p>
                </div>
                <div class="col-10 col-lg-6 position-relative frame mt-speaking">
@@ -278,6 +279,8 @@
       <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXDB014HWL"></script>
       <script src="https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.4"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>
       <script src="js/script.js"></script>
    </body>
 </html>
