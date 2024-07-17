@@ -154,6 +154,15 @@ header {
         border-color: #24292e;
     }
 }
+.btn-email {
+    background-color: #004080; 
+    color: #fff;
+    &:hover {
+        color: #fff;
+        background-color: #0066cc;
+    }
+}
+
 .custom-list {
     font-family: "Space Mono", monospace;
     padding-left: 50px;
