@@ -622,4 +622,10 @@ button.header-menu.header-menu{
         -webkit-backdrop-filter: blur(10px) saturate(1.3);
         transition: all .2s var(ease-in-out);
    }
+   .main {
+    color: white;
+   }
+   .blur {
+    color: black;
+   }
 }
