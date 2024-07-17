@@ -1,7 +1,6 @@
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
-
 gtag('config', 'G-CXDB014HWL');
 
 const sunButton = document.getElementById('sun-button');
@@ -30,7 +29,7 @@ const texts = {
         about: "Me especializo en crear experiencias digitales precisas, atractivas y accesibles, aprovechando mi experiencia y conocimientos. Con un enfoque en la innovación y la calidad, prospero enfrentando desafíos y entregando resultados sobresalientes. Mi compromiso con la excelencia me impulsa a mejorar continuamente y a romper límites en el campo del desarrollo de software.",
         downloadCv: "Descargar CV",
         experienceTitle: "Experiencias.",
-        nicasource: "Construí, diseñé y entregué sitios web, aplicaciones web, habilidades de Alexa, chatbots y experiencias digitales de alta calidad para una variedad diversa de proyectos para clientes como iHeartMedia, Skilled Creative, Big spaceship, Studio IVL y Struck. omo Líder de Equipo en el departamento de desarrollo conversacional, proporciono liderazgo a través de una estrecha colaboración con el equipo, intercambio de conocimientos y liderazgo en la creación de herramientas internas para mejorar la eficiencia y la calidad del trabajo.",
+        nicasource: "Construí, diseñé y entregué sitios web, aplicaciones web, habilidades de Alexa, chatbots y experiencias digitales de alta calidad para una variedad diversa de proyectos para clientes como iHeartMedia, Skilled Creative, Big spaceship, Studio IVL y Struck. Como Líder de Equipo en el departamento de desarrollo conversacional, proporciono liderazgo a través de una estrecha colaboración con el equipo, intercambio de conocimientos y liderazgo en la creación de herramientas internas para mejorar la eficiencia y la calidad del trabajo.",
         atlas: "Construí y mantuve componentes críticos utilizados para mejorar la habilidad de Atlas Primer. Colaboré estrechamente con equipos multifuncionales, incluidos desarrolladores y partes interesadas clave, para aplicar las mejores prácticas y mejorar la habilidad. Este esfuerzo colaborativo asegura la alineación con los objetivos estratégicos y fomenta una cultura de innovación y excelencia en toda la organización.",
         inss: "Dirigí el equipo de control de calidad, supervisando el diseño, la codificación y la implantación de un conjunto de herramientas y programas de pruebas, que abarcaban impactos en bases de datos, escenarios de software, pruebas unitarias, pruebas de extremo a extremo, repetición de pruebas de errores y fallos, y mejoras de la usabilidad. Además, empleé patrones de diseño para optimizar los flujos de trabajo de los algoritmos, aumentando significativamente la eficiencia general.",
         atomic: "Dirigí el desarrollo de experiencias de usuario enriquecidas e interacciones dinámicas, empleando metodologías avanzadas de animación para elevar el compromiso a nuevos niveles. Encabecé la creación de elementos front-end, refiné la estética del diseño visual y prototipé para una integración fluida en plataformas responsivas.",
@@ -39,101 +38,75 @@ const texts = {
     }
 };
 
-window.addEventListener("load", function() {
-    const hero = document.getElementById("hero");
-
-    function updateMousePosition(ev) {
-        const { clientX, clientY } = ev;
-        hero.style.setProperty("--x", `${clientX}px`);
-        hero.style.setProperty("--y", `${clientY}px`);
+window.addEventListener('load', function() {
+    const hero = document.getElementById('hero');
+    
+    function updateMousePosition(event) {
+        hero.style.setProperty('--x', `${event.clientX}px`);
+        hero.style.setProperty('--y', `${event.clientY}px`);
     }
-
-    window.addEventListener("mousemove", updateMousePosition);
-
-    return function cleanup() {
-        window.removeEventListener("mousemove", updateMousePosition);
-    };
+    
+    window.addEventListener('mousemove', updateMousePosition);
 });
 
-sunButton.addEventListener('click', function() {
-    if (sunIcon.src.includes('img/theme-light.svg')) {
-        sunIcon.src = 'img/theme-dark.svg';
-        body.classList.add('dark-mode');
-    } else {
-        sunIcon.src = 'img/theme-light.svg'; 
-        body.classList.remove('dark-mode');
-    }
+sunButton.addEventListener('click', () => {
+    const isLightMode = sunIcon.src.includes('img/theme-light.svg');
+    sunIcon.src = isLightMode ? 'img/theme-dark.svg' : 'img/theme-light.svg';
+    body.classList.toggle('dark-mode', isLightMode);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.main-link');
     const sections = document.querySelectorAll('section');
-
-    // Function to highlight the active link based on the section in view
+    
     function highlightActiveLink() {
         let currentSection = '';
-
+        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-
+            
             if (pageYOffset >= sectionTop - sectionHeight / 3) {
                 currentSection = section.getAttribute('id');
             }
         });
-
+        
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSection) {
-                link.classList.add('active');
-            }
+            link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection);
         });
     }
-
-    // Initial call to highlight the active link
+    
     highlightActiveLink();
-
-    // Event listener for scroll to update the active link
     document.addEventListener('scroll', highlightActiveLink);
 });
 
+const backToTopButton = document.getElementById('btn_back-to-top');
 
-let mybutton = document.getElementById("btn_back-to-top");
+window.addEventListener('scroll', () => {
+    backToTopButton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? 'block' : 'none';
+});
 
-window.onscroll = function () {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-    ) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
+backToTopButton.addEventListener('click', () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-}
+});
 
 languageButton.addEventListener('click', () => {
-    if (currentLanguage === 'en') {
-        changeLanguage('sp');
-    } else {
-        changeLanguage('en');
-    }
+    const newLanguage = currentLanguage === 'en' ? 'sp' : 'en';
+    changeLanguage(newLanguage);
 });
 
 function changeLanguage(lang) {
     currentLanguage = lang;
-
+    
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         element.textContent = texts[lang][key];
     });
 }
+
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('ul.header-menu');
+    const nameSectionTop = document.getElementById('name').getBoundingClientRect().top;
+    header.classList.toggle('blur', nameSectionTop <= 0);
+});
