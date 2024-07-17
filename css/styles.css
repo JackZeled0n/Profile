@@ -144,13 +144,12 @@ header {
    }
 }
 .btn-github {
-    color: #FFFFFF;
-    background-color: #333333;
-    border-color: #333333;
+    color: #24292f;
+    background-color: #ebf0f4;
+    border-color: #d0d7de;
+    background-image: linear-gradient(180deg, #f6f8fa, #ebf0f4 90%);
     &:hover {
-        color: #FFFFFF;
-        background-color: #24292e;
-        border-color: #24292e;
+    background-image: linear-gradient(180deg, #EAEEF1, #E4E9ED 90%);
    }
 }
 .btn-email {
