@@ -121,14 +121,6 @@ function backToTop() {
     document.documentElement.scrollTop = 0;
 }
 
-const elements = ['.my-atropos-ieee', '.my-atropos-cs50', '.my-atropos-cs50-mobile', '.my-atropos-kidscamp'];
-
-elements.forEach(selector => {
-    Atropos({
-        el: selector
-    });
-});
-
 languageButton.addEventListener('click', () => {
     if (currentLanguage === 'en') {
         changeLanguage('sp');
