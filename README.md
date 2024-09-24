@@ -61,4 +61,7 @@ Feel free to reach out to me via:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](./MIT-LICENSE.txt) file for details.
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit [CC BY-NC 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+Please note that the use of this software for commercial purposes is strictly prohibited.
+
