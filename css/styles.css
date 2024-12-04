@@ -94,7 +94,10 @@ header {
         transform: translateY(0);
    }
 }
-.about, .projects {
+.about {
+    margin-top: 24px;
+}
+.projects {
     margin-top: 24px;
     margin-bottom: 50px;
 }
