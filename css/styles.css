@@ -53,11 +53,6 @@ body, html {
 #background {
     height: auto;
 }
-@media (min-width: 992px) {
-    #background {
-        height: 100vh;
-   }
-}
 .background-animation {
     position: relative;
     overflow: hidden;
