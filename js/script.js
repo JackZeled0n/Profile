@@ -114,3 +114,23 @@ window.addEventListener('scroll', () => {
     const nameSectionTop = document.getElementById('name').getBoundingClientRect().top;
     header.classList.toggle('blur', nameSectionTop <= 0);
 });
+
+gsap.registerPlugin(SplitText);
+
+window.addEventListener("load", () => {
+   const split = SplitText.create(".split", {
+      type: "chars",
+      onSplit(self) {
+      gsap.fromTo(self.chars, 
+         { y: 100, autoAlpha: 0 }, 
+         {
+            y: 0,
+            autoAlpha: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "back.out(1.7)"
+         }
+      );
+      }
+   });
+});
