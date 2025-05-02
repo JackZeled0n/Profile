@@ -95,7 +95,7 @@ header {
   
 @media (max-width: 768px) {
     .name-heading {
-        font-size: 48px;
+        font-size: 3em;
         white-space: normal;
     }
 }  
