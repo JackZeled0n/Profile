@@ -692,4 +692,26 @@ button.header-menu.header-menu{
    .badge-new {
     background-color: hsl(256, 85%, 57%);
    }
+   .skills-section {
+    
+        background: radial-gradient(125% 80% at 50% 10%, #000 40%, #63e 100%);
+   }
+}
+
+.tech-box {
+  width: 120px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  touch-action: none;
+  transition: transform 0.3s ease;
+}
+.tech-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.tech-box:active {
+  cursor: grabbing;
 }
