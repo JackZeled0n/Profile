@@ -13,6 +13,7 @@ const texts = {
     en: {
         experienceMenu: "Experiences",
         speakingMenu: "Speaking",
+        technologiesMenu: "Technologies",
         about: "I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and delivering outstanding results. My commitment to excellence drives me to continually improve and push boundaries in the field of software development.",
         downloadCv: "Download CV",
         experienceTitle: "Experiences",
@@ -30,6 +31,7 @@ const texts = {
     sp: {
         experienceMenu: "Experiencias",
         speakingMenu: "Ponencias",
+        technologiesMenu: "Tecnologias",
         about: "Me especializo en crear experiencias digitales precisas, atractivas y accesibles, aprovechando mi experiencia y conocimientos. Con un enfoque en la innovación y la calidad, prospero enfrentando desafíos y entregando resultados sobresalientes. Mi compromiso con la excelencia me impulsa a mejorar continuamente y a romper límites en el campo del desarrollo de software.",
         downloadCv: "Descargar CV",
         experienceTitle: "Experiencias",
