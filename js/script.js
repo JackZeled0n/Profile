@@ -145,7 +145,7 @@ gsap.registerPlugin(ScrollTrigger, Draggable)
 
 gsap.from(".tech-box", {
     scrollTrigger: {
-        trigger: "#skills",
+        trigger: "#technologies",
         start: "top 80%"
     },
     y: 0,
@@ -162,8 +162,7 @@ gsap.from(".tech-box", {
 Draggable.create(".gsap-draggable", {
     type: "x,y",
     edgeResistance: 0,
-    inertia: true,
-    bounds: "#skills",
+    bounds: "#technologies",
     minimumMovement: 2,
     onPress() {
         gsap.to(this.target, { scale: 1.15, duration: 0.1 });
