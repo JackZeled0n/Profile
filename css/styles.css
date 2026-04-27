@@ -715,3 +715,45 @@ button.header-menu.header-menu{
 .tech-box:active {
   cursor: grabbing;
 }
+
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.code-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.code-chip {
+  position: absolute;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 64, 128, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(14px);
+  color: #004080;
+  font-family: "Space Mono", monospace;
+  font-size: 0.82rem;
+  box-shadow: 0 18px 50px rgba(0, 64, 128, 0.12);
+  white-space: nowrap;
+}
+
+.chip-1 { top: 18%; left: 9%; }
+.chip-2 { top: 28%; right: 8%; }
+.chip-3 { bottom: 28%; left: 7%; }
+.chip-4 { bottom: 18%; right: 12%; }
+
+#name {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .code-chip {
+    display: none;
+  }
+}

@@ -26,7 +26,8 @@ const texts = {
         inss: "Led the QA team, overseeing the design, coding and implementation of a suite of testing tools and programs, covering database impacts, software scenarios, unit testing, end-to-end testing, error/bug retesting, and usability enhancements. Moreover, I employed design patterns to optimize algorithm workflows, significantly boosting overall efficiency.",
         atomic: "Led the development of enriched user experiences and dynamic interactions, employing advanced animation methodologies to elevate engagement to new heights. Spearheaded the creation of front-end elements, refined visual design aesthetics, and prototyped for seamless integration across responsive platforms.",
         speakingTitle: "Speaking",
-        speakingText: "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding constributions to CS50x as a member of the teaching staff at CS50x.ni."
+        speakingText: "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding constributions to CS50x as a member of the teaching staff at CS50x.ni.",
+        scaleai: "Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop detailed rubrics and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.",
     },
     sp: {
         experienceMenu: "Experiencias",
@@ -44,18 +45,19 @@ const texts = {
         inss: "Dirigí el equipo de control de calidad, supervisando el diseño, la codificación y la implantación de un conjunto de herramientas y programas de pruebas, que abarcaban impactos en bases de datos, escenarios de software, pruebas unitarias, pruebas de extremo a extremo, repetición de pruebas de errores y fallos, y mejoras de la usabilidad. Además, empleé patrones de diseño para optimizar los flujos de trabajo de los algoritmos, aumentando significativamente la eficiencia general.",
         atomic: "Dirigí el desarrollo de experiencias de usuario enriquecidas e interacciones dinámicas, empleando metodologías avanzadas de animación para elevar el compromiso a nuevos niveles. Encabecé la creación de elementos front-end, refiné la estética del diseño visual y prototipé para una integración fluida en plataformas responsivas.",
         speakingTitle: "Ponencias",
-        speakingText: "Como Ingeniero de Software, he tenido la oportunidad de compartir mis conocimientos en diversas presentaciones. Colaboré con ISOC SIGHT Nicaragua para establecer un telecentro destinado a enseñar tecnología, donde fui responsable de enseñar a los participantes cómo crear videojuegos sin código utilizando Scratch. En 2023, impartí un curso llamado 'Minecraft Hour of Code' en el campamento infantil dentro de WordCamp. Además, he realizado contribuciones destacadas a CS50x como miembro del equipo docente en CS50x.ni."
+        speakingText: "Como Ingeniero de Software, he tenido la oportunidad de compartir mis conocimientos en diversas presentaciones. Colaboré con ISOC SIGHT Nicaragua para establecer un telecentro destinado a enseñar tecnología, donde fui responsable de enseñar a los participantes cómo crear videojuegos sin código utilizando Scratch. En 2023, impartí un curso llamado 'Minecraft Hour of Code' en el campamento infantil dentro de WordCamp. Además, he realizado contribuciones destacadas a CS50x como miembro del equipo docente en CS50x.ni.",
+        scaleai: "Diseño y evalúo flujos complejos impulsados por IA mediante la creación de escenarios, prompts estructurados y marcos de validación robustos. Desarrollo rúbricas detalladas y sistemas de validación para evaluar el razonamiento, la precisión y la toma de decisiones en múltiples pasos, mejorando la consistencia y confiabilidad de los sistemas de IA a escala.",
     }
 };
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const hero = document.getElementById('hero');
-    
+
     function updateMousePosition(event) {
         hero.style.setProperty('--x', `${event.clientX}px`);
         hero.style.setProperty('--y', `${event.clientY}px`);
     }
-    
+
     window.addEventListener('mousemove', updateMousePosition);
 });
 
@@ -68,24 +70,24 @@ sunButton.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.main-link');
     const sections = document.querySelectorAll('section');
-    
+
     function highlightActiveLink() {
         let currentSection = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            
+
             if (pageYOffset >= sectionTop - sectionHeight / 3) {
                 currentSection = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection);
         });
     }
-    
+
     highlightActiveLink();
     document.addEventListener('scroll', highlightActiveLink);
 });
@@ -108,7 +110,7 @@ languageButton.addEventListener('click', () => {
 
 function changeLanguage(lang) {
     currentLanguage = lang;
-    
+
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         element.textContent = texts[lang][key];
@@ -124,24 +126,73 @@ window.addEventListener('scroll', () => {
 gsap.registerPlugin(SplitText);
 
 window.addEventListener("load", () => {
-   const split = SplitText.create(".split", {
-      type: "chars",
-      onSplit(self) {
-      gsap.fromTo(self.chars, 
-         { y: 100, autoAlpha: 0 }, 
-         {
-            y: 0,
-            autoAlpha: 1,
-            duration: 1,
-            stagger: 0.05,
-            ease: "back.out(1.7)"
-         }
-      );
-      }
-   });
+    const split = SplitText.create(".split", {
+        type: "chars",
+        onSplit(self) {
+            gsap.fromTo(self.chars,
+                { y: 100, autoAlpha: 0 },
+                {
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 1,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)"
+                }
+            );
+        }
+    });
 });
 
 gsap.registerPlugin(ScrollTrigger, Draggable)
+
+function initDeveloperSignatureAnimation() {
+    const hero = document.getElementById("hero");
+    const chips = gsap.utils.toArray(".code-chip");
+
+    if (!hero || !chips.length) return;
+
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "power3.out",
+            duration: 1,
+        },
+    });
+
+    tl.from(chips, {
+        autoAlpha: 0,
+        y: 24,
+        scale: 0.9,
+        stagger: 0.12,
+    });
+
+    chips.forEach((chip, index) => {
+        gsap.to(chip, {
+            y: index % 2 === 0 ? -16 : 16,
+            x: index % 2 === 0 ? 10 : -10,
+            rotation: index % 2 === 0 ? 2 : -2,
+            duration: 3 + index * 0.35,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+        });
+    });
+
+    hero.addEventListener("mousemove", (event) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (event.clientX - rect.left - rect.width / 2) / rect.width;
+        const y = (event.clientY - rect.top - rect.height / 2) / rect.height;
+
+        gsap.to(chips, {
+            xPercent: x * 10,
+            yPercent: y * 10,
+            duration: 0.6,
+            ease: "power2.out",
+            overwrite: "auto",
+        });
+    });
+}
+
+window.addEventListener("load", initDeveloperSignatureAnimation);
 
 gsap.from(".tech-box", {
     scrollTrigger: {
@@ -169,9 +220,37 @@ Draggable.create(".gsap-draggable", {
     },
     onRelease() {
         gsap.to(this.target, {
-        scale: 1,
-        duration: 0.1,
-        ease: "power2.out"
+            scale: 1,
+            duration: 0.1,
+            ease: "power2.out"
         });
     }
+});
+
+function animateExperienceCards() {
+  const cards = document.querySelectorAll(".tab-pane.active .card");
+
+  if (!cards.length) return;
+
+  gsap.fromTo(cards,
+    {
+      y: 30,
+      autoAlpha: 0,
+      scale: 0.98
+    },
+    {
+      y: 0,
+      autoAlpha: 1,
+      scale: 1,
+      duration: 0.6,
+      ease: "power3.out"
+    }
+  );
+}
+
+// Bootstrap tab event
+document.querySelectorAll('[data-bs-toggle="pill"]').forEach(btn => {
+  btn.addEventListener("shown.bs.tab", () => {
+    animateExperienceCards();
+  });
 });
