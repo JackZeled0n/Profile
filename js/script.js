@@ -454,21 +454,6 @@ function initMagneticHover() {
     });
 }
 
-function initPhotoParallax() {
-    gsap.utils.toArray(".photo-card").forEach((photo, index) => {
-        gsap.to(photo, {
-            scrollTrigger: {
-                trigger: ".speaking-section",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            },
-            y: index % 2 === 0 ? -80 : 80,
-            ease: "none",
-        });
-    });
-}
-
 function initBackToTop() {
     window.addEventListener("scroll", () => {
         const shouldShow = window.scrollY > 500;
@@ -546,6 +531,32 @@ function initMobileMenu() {
 
     document.querySelectorAll(".mobile-menu-link").forEach((link) => {
         link.addEventListener("click", closeMenu);
+    });
+}
+
+function initPhotoParallax() {
+    gsap.utils.toArray(".speaking-floating-card").forEach((photo, index) => {
+        gsap.to(photo, {
+            scrollTrigger: {
+                trigger: ".speaking-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            y: index % 2 === 0 ? -60 : 70,
+            ease: "none",
+        });
+    });
+
+    gsap.to(".speaking-hero-image img", {
+        scrollTrigger: {
+            trigger: ".speaking-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        scale: 1.08,
+        ease: "none",
     });
 }
 
