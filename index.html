@@ -1,471 +1,496 @@
 <!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Jake - Software developer</title>
-      <meta name="description" content="Jake Zeledon is a software engineer who builds accessible and digital experiences.">
-      <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-      <link rel="manifest" href="img/favicon/site.webmanifest">
-      <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-      <link rel="shortcut icon" href="img/favicon/favicon.ico">
-      <meta name="msapplication-TileColor" content="#f9e4c9">
-      <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
-      <link rel="stylesheet" href="css/bootstrap.min.css" />
-      <link rel="stylesheet" href="css/bootstrap-icons.min.css">
-      <link rel="stylesheet" href="css/inter.css">
-      <link rel="stylesheet" href="css/styles.css" />
-   </head>
-   <body id="body">
-      <header class="header-menu">
-         <nav class="header-menu">
-            <ul class="main header-menu">
-               <li class="header-menu"><a href="#me" class="main-link header-menu active">Me <span class="slash header-menu">/</span></a></li>
-               <li class="header-menu"><a href="#experience" class="main-link header-menu" data-key="experienceMenu">Experiences </a></li>
-               <li class="header-menu"><a href="#speaking" class="main-link header-menu" data-key="speakingMenu">Speaking </a></li>
-               <li class="header-menu"><a href="#technologies" class="main-link header-menu" data-key="technologiesMenu">Technologies </a></li>
-            </ul>
-         </nav>
-      </header>
+<html lang="en" translate="no">
 
-      <section class="background-color-intro" id="me">
-         <div class="gradiente-mouse" id="hero">
-            <button id="sun-button" class="icon-button"><img id="sun-icon" src="img/theme-light.svg" width="40" height="40" alt="Theme light"></button>
-            <button id="lang-button" class="language-button"><img src="img/language.svg" width="40" height="40" alt="Change language"></button>
-            
-            <div class="code-orbit" aria-hidden="true">
-               <span class="code-chip chip-1">const dev = "Jake";</span>
-               <span class="code-chip chip-2">buildAccessibleUI();</span>
-               <span class="code-chip chip-3">shipProductionCode();</span>
-               <span class="code-chip chip-4">&lt;FullstackEngineer /&gt;</span>
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <title>Jake Zeledon - Software Engineer</title>
+   <meta name="description"
+      content="Jake Zeledon is a Fullstack Software Engineer building accessible digital experiences, scalable web apps, APIs and AI evaluation workflows." />
+   <meta name="google" content="notranslate">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+   <link rel="manifest" href="img/favicon/site.webmanifest" />
+   <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+
+   <link rel="stylesheet" href="css/bootstrap.min.css" />
+   <link rel="stylesheet" href="css/bootstrap-icons.min.css" />
+   <link rel="stylesheet" href="css/inter.css" />
+   <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body id="body">
+   <div class="site-noise" aria-hidden="true"></div>
+   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+   <header class="site-header">
+
+      <nav class="site-nav" aria-label="Main navigation">
+         <a href="#home" class="nav-link active" data-section-link="home">Me</a>
+         <a href="#current" class="nav-link" data-section-link="current">Current</a>
+         <a href="#experience" class="nav-link" data-section-link="experience" data-key="experienceMenu">Experiences</a>
+         <a href="#speaking" class="nav-link" data-section-link="speaking" data-key="speakingMenu">Speaking</a>
+         <a href="#technologies" class="nav-link" data-section-link="technologies"
+            data-key="technologiesMenu">Technologies</a>
+      </nav>
+
+      <div class="header-actions">
+         <button id="lang-button" class="utility-button" type="button" aria-label="Change language">
+            EN
+         </button>
+
+         <button id="sun-button" class="utility-button" type="button" aria-label="Toggle theme">
+            <i id="themeIcon" class="bi bi-sun-fill"></i>
+         </button>
+      </div>
+   </header>
+
+   <main>
+      <!-- HERO -->
+      <section class="hero-section section-panel" id="home">
+         <div class="hero-bg" aria-hidden="true">
+            <div class="gradient-orb orb-one"></div>
+            <div class="gradient-orb orb-two"></div>
+            <div class="gradient-orb orb-three"></div>
+            <div class="grid-overlay"></div>
+         </div>
+
+         <div class="floating-code code-left" aria-hidden="true">
+            <span>const dev = "Jake";</span>
+         </div>
+
+         <div class="floating-code code-right" aria-hidden="true">
+            <span>buildAccessibleUI();</span>
+         </div>
+
+         <div class="floating-code code-bottom" aria-hidden="true">
+            <span>validateAISystems();</span>
+         </div>
+
+         <div class="container hero-container">
+            <div class="hero-kicker reveal-text">
+               <span class="status-dot"></span>
+               <span data-key="heroKicker">Available for product, frontend and AI evaluation work</span>
             </div>
-            <br>
-            <div id="background" class="background-animation">
-               <div class="container d-flex align-items-center justify-content-center h-100" id="name">
-                  <div class="row">
-                     <div class="col-12">
-                        <div class="text-center">
-                           <h1 class="title-color-text mt-3 split name-heading">
-                              <span class="jake">Jake</span>
-                              Zeledon
-                           </h1>
-                           <h2 class="font-medium text-dark">Fullstack Software Engineer</h2>
-                           <a href="pdf/Resume.pdf" target="_blank" class="btn mt-2 btn-download" data-key="downloadCv">Download CV</a>
-                           <br />
-                           <br />
-                           <a href="https://www.linkedin.com/in/jakezeledon/" class="btn btn-linkedin" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                           <a href="mailto:jackiezeledon@gmail.com" class="btn btn-email"><i class="bi bi-envelope"></i> Email</a>
-                           <a href="https://github.com/JackZeled0n" class="btn btn-github" target="_blank"><i class="bi bi-github"></i> GitHub</a>
-                        </div>
-                     </div>
 
-                     <div class="col-12">
-                        <div class="about">
-                           <p class="text-dark text-center" style="font-size: 1.25rem; line-height: 1.75rem;" data-key="about">
-                              I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and
-                              delivering outstanding results. My commitment to excellence drives me to continually improve and push boundaries in the field of software development.
-                           </p>
-                        </div>
-                     </div>
+            <h1 class="hero-title split-title">
+               <span class="hero-line">Jake</span>
+               <span class="hero-line">Zeledon</span>
+            </h1>
 
-                     <div class="col-12">
-                        <section class="experience" id="experience">
-                           <h2 class="title-color-text text-highlight" data-key="experienceTitle">Experiences</h2>
-                           <br />
-                           <div class="d-flex justify-content-center">
-                              <div class="col-10">
-                                 <div class="row">
-                                    <div class="col-md-4">
-                                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                          <button class="nav-link mb-1 text-start active" id="job8-tab" data-bs-toggle="pill" data-bs-target="#job8" type="button" role="tab">
-                                             Scale AI
-                                          </button>
-                                          <button class="nav-link mb-1 text-start" id="job7-tab" data-bs-toggle="pill" data-bs-target="#job7" type="button" role="tab" aria-controls="job7" aria-selected="true">
-                                             <!--  <span class="badge-new">Current</span> -->
-                                             AG Software
-                                          </button>
-                                          <button class="nav-link mb-1 text-start" id="job6-tab" data-bs-toggle="pill" data-bs-target="#job6" type="button" role="tab" aria-controls="job6" aria-selected="true">
-                                             Sicsa
-                                          </button>
-                                          <button class="nav-link mb-1 text-start" id="job5-tab" data-bs-toggle="pill" data-bs-target="#job5" type="button" role="tab" aria-controls="job5" aria-selected="false">
-                                             Logacode
-                                          </button>
-                                          <button class="nav-link mb-1 text-start" id="job1-tab" data-bs-toggle="pill" data-bs-target="#job1" type="button" role="tab" aria-controls="job1" aria-selected="false">Nicasource</button>
-                                          <button class="nav-link mb-1 text-start" id="job2-tab" data-bs-toggle="pill" data-bs-target="#job2" type="button" role="tab" aria-controls="job2" aria-selected="false">Atlas Primer</button>
-                                          <button class="nav-link mb-1 text-start" id="job4-tab" data-bs-toggle="pill" data-bs-target="#job4" type="button" role="tab" aria-controls="job4" aria-selected="false">Nicaraguan Social Security Institute</button>
-                                          <button class="nav-link mb-1 text-start" id="job3-tab" data-bs-toggle="pill" data-bs-target="#job3" type="button" role="tab" aria-controls="job3" aria-selected="false">Atomic developers</button>
-                                       </div>
-                                    </div>
+            <p class="hero-role reveal-text">
+               <span data-key="heroRole">Fullstack Engineer</span>
+               <span class="role-divider">/</span>
+               <span data-key="heroRoleSecond">Frontend Specialist</span>
+               <span class="role-divider">/</span>
+               <span data-key="heroRoleThird"> AI Evaluation</span>
+            </p>
 
-                                    <div class="col-md-8">
-                                       <div class="tab-content" id="v-pills-tabContent">
-                                          
-                                          <div class="tab-pane fade show active" id="job8" role="tabpanel" aria-labelledby="job8-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>
-                                                   Quality Analyst (AI Evaluation & Prompt Engineering)
-                                                   <a target="_blank" href="https://scale.com/" style="color: #000000; text-decoration: none;">
-                                                      @ Scale AI <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i>
-                                                   </a>
-                                                   </h5>
+            <p class="hero-description reveal-text" data-key="about">
+               I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth
+               of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and
+               delivering outstanding results.
+            </p>
 
-                                                   <div class="text-slate-500">Mar 2026 - Present</div>
-                                                   <br>
+            <div class="hero-actions reveal-text">
+               <a href="pdf/Resume.pdf" target="_blank" class="btn-primary-glow" data-key="downloadCv">
+                  Download CV
+               </a>
 
-                                                   <p data-key="scaleai">
-                                                     Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop detailed rubrics and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.
-                                                   </p>
+               <a href="https://www.linkedin.com/in/jakezeledon/" target="_blank" class="btn-ghost">
+                  <i class="bi bi-linkedin"></i>
+                  LinkedIn
+               </a>
 
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Prompt Engineering</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">AI Evaluation</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">LLMs</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Scenario Design</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Rubrics</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Oracle Events</span>
-                                                </div>
-                                             </div>
-                                          </div>
-                                          
-                                          <div class="tab-pane fade show" id="job7" role="tabpanel" aria-labelledby="job7-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>
-                                                      Fullstack Developer
-                                                      <a target="_blank" href="https://www.agssa.net/" style="color: #000000; text-decoration: none;">
-                                                         @ AG Software <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i>
-                                                      </a>
-                                                   </h5>
-                                                   <div class="text-slate-500" aria-hidden="true">May 2025 - Mar 2026</div>
-                                                   <br>
-                                                   <p data-key="agsoftware">
-                                                      Contracted by AG Software to contribute to internal platforms for Classical Conversations, a global organization that supports homeschooling communities. I develop and maintain scalable web applications and APIs. My responsibilities also include writing unit and integration tests to ensure code reliability and maintainability across services used by thousands of families and educators worldwide.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">GitLab</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">HTML & CSS</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">TypeScript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">React</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Node.js</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Fastify</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Knex</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">MSSQL</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Jest</span>
-                                                </div>
-                                             </div>
-                                          </div>
+               <a href="https://github.com/JackZeled0n" target="_blank" class="btn-ghost">
+                  <i class="bi bi-github"></i>
+                  GitHub
+               </a>
 
-                                          <div class="tab-pane fade show" id="job6" role="tabpanel" aria-labelledby="job6-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Lead Frontend Developer <a target="_blank" href="https://www.sicsa.com.ni/" style="color: #0068E1; text-decoration: none;">@ Sicsa <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">Aug 2024 - Nov 2024</div>
-                                                   <br>
-                                                   <p data-key="sicsa">
-                                                      Led a team in transforming an online ordering platform that facilitates the dropshipping business model for clients, enabling the management of supplier data and the generation of sales orders for electronic components. Oversaw the unification of inconsistent UI elements, the development of new components, and the implementation of real-time notifications for product actions. Leveraged AJAX to optimize page interactions and significantly reduced code redundancy, achieving a cohesive, scalable, and visually consistent frontend architecture while fostering collaboration and maintaining high development standards.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">FTP</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">GitHub Actions</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">HTML & CSS</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Laravel</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">PHP</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Tailwind</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">UI</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">UX</span>
-                                                </div>
-                                             </div>
-                                          </div>
+               <a href="mailto:jackiezeledon@gmail.com" class="btn-ghost">
+                  <i class="bi bi-envelope"></i>
+                  Email
+               </a>
+            </div>
 
-                                          <div class="tab-pane fade show" id="job5" role="tabpanel" aria-labelledby="job5-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Frontend Developer <a target="_blank" href="https://logacode.com/" style="color: #F95631; text-decoration: none;">@ Logacode <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">Jul 2024 - Oct 2024</div>
-                                                   <br>
-                                                   <p data-key="logacode">
-                                                      Contributed to building new, visually appealing, and user-friendly components for the project, achieving 90% completion. Focused on improving the user interface and ensuring seamless interaction for an enhanced user experience.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Html & Css</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Nextjs</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">React</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Redux</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Tailwind</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Typescript</span>
-                                                </div>
-                                             </div>
-                                          </div>
+            <div class="hero-metrics reveal-text" aria-label="Profile highlights">
+               <div class="metric-card">
+                  <span class="metric-value" data-key="metricYears">Since 2017</span>
+                  <span class="metric-label" data-key="metricSinceLabel">Building software</span>
+               </div>
 
-                                          <div class="tab-pane fade" id="job1" role="tabpanel" aria-labelledby="job1-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Engineering Team Lead <a target="_blank" href="https://nicasource.com/" style="color: rgb(241 60 69 / 1); text-decoration: none;">@ Nicasource <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">Engineering team lead · Apr 2022 - Sep 2023</div>
-                                                   <div class="text-slate-500" aria-hidden="true">Software developer · Jul 2021 - Mar 2022</div>
-                                                   <br>
-                                                   <p data-key="nicasource">Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck.
-                                                      As a Team Leader in the conversational development department, I provide leadership through close collaboration with the team, knowledge sharing, and spearheading the creation of internal tools to improve efficiency and work quality.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Alexa Skills Kit</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Angular</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">AWS</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Bolt.js</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Docker</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Express</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Html & Css</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Javascript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Jovo framework</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Mocha</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Nest.js</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Ng Ant Design</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Node.js</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Serverless</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Typescript</span>
-                                                </div>
-                                             </div>
-                                          </div>
+               <div class="metric-card">
+                  <span class="metric-value" data-key="AI">AI</span>
+                  <span class="metric-label" data-key="metricAI">Evaluation workflows</span>
+               </div>
 
-                                          <div class="tab-pane fade" id="job2" role="tabpanel" aria-labelledby="job2-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Voice Developer <a target="_blank" href="https://www.atlasprimer.com/" style="color: rgb(18,83,84); text-decoration: none;">@ Atlas primer <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">Oct 2021 - May 2022</div>
-                                                   <br>
-                                                   <p data-key="atlas">Built and maintained critical components used to improve Atlas Primer skill. Collaborated closely with cross-functional teams, including developers and key stakeholders,
-                                                      to implement best practices and enhance the skill. This collaborative effort ensures alignment with strategic objectives and fosters a culture of innovation and excellence throughout the organization.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Alexa</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">AWS</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Google action</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Javascript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Jovo framework</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Node.js</span>
-                                                </div>
-                                             </div>
-                                          </div>
-
-                                          <div class="tab-pane fade" id="job4" role="tabpanel" aria-labelledby="job4-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Programmer <span style="color: rgb(60, 76, 164); text-decoration: none;">@ Nicaraguan Social Security Institute</span></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">Programmer · Feb 2021 - Jun 2021</div>
-                                                   <div class="text-slate-500" aria-hidden="true">System Integrator · Apr 2018 - Jan 2021</div>
-                                                   <div class="text-slate-500" aria-hidden="true">Digitalization Operator · Apr 2017 - Mar 2018</div>
-                                                   <br>
-                                                   <p data-key="inss">
-                                                      Led the QA team, overseeing the design, coding and implementation of a suite of testing tools and programs, covering database impacts, software scenarios, unit testing, end-to-end testing, error/bug retesting, and usability enhancements.
-                                                      Moreover, I employed design patterns to optimize algorithm workflows, significantly boosting overall efficiency.
-                                                   </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Cucumber</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Gitlab</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Hibernate</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Html & Css</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Java</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Javascript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Junit5</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Mockito</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">PowerMock</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Selenium</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">SQL Server</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">SpringBoot</span>
-                                                </div>
-                                             </div>
-                                          </div>
-
-                                          <div class="tab-pane fade" id="job3" role="tabpanel" aria-labelledby="job3-tab">
-                                             <div class="card card-color shadow-sm rounded" style="border: none;">
-                                                <div class="card-body">
-                                                   <h5>Frontend Developer <a target="_blank" href="https://github.com/AtomicDevelopers" style="color: rgb(233, 72, 64); text-decoration: none;">@ Atomic developers <i class="bi bi-arrow-up-right" style="font-size: 0.8rem;"></i></a></h5>
-                                                   <div class="text-slate-500" aria-hidden="true">2017 - 2024</div>
-                                                   <br>
-                                                   <p data-key="atomic">Led the development of enriched user experiences and dynamic interactions, employing advanced animation methodologies to elevate engagement to new heights. Spearheaded the creation of front-end elements, refined visual design aesthetics, and prototyped for seamless integration across responsive platforms. </p>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Adobe XD</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Angular</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Bootstrap</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Express</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Git</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Html & Css</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Javascript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Typescript</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">SQL Server</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">Node.js</span>
-                                                   <span class="badge rounded-pill bg-light pill-color-text">MongoDB</span>
-                                                </div>
-                                             </div>
-                                          </div>
-
-                                       </div>
-                                    </div>
-
-                                 </div>
-                              </div>
-                           </div>
-                        </section>
-                     </div>
-                  </div>
+               <div class="metric-card">
+                  <span class="metric-value">UI</span>
+                  <span class="metric-label" data-key="metricUI">Accessible interfaces</span>
                </div>
             </div>
+         </div>
 
-            <section id="speaking"></section>
+         <a class="scroll-cue" href="#current" aria-label="Scroll to current role">
+            <span data-key="scrollCue">Scroll</span>
+            <i class="bi bi-arrow-down"></i>
+         </a>
+      </section>
 
-            <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
-               <path class="wave" fill-opacity="1" d="M0,0L48,5.3C96,11,192,21,288,37.3C384,53,480,75,576,80C672,85,768,75,864,53.3C960,32,1056,0,1152,0C1248,0,1344,32,1392,48L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+      <!-- CURRENT ROLE -->
+      <section class="current-section section-panel" id="current">
+         <div class="container">
+            <div class="section-heading">
+               <span class="section-eyebrow" data-key="currentEyebrow">Current Mission</span>
+               <h2 class="section-title" data-key="currentTitle">Building reliable AI evaluation systems</h2>
+            </div>
 
+            <div class="current-grid">
+               <article class="current-card reveal-card">
+                  <div class="card-topline">
+                     <span class="company-pill">Scale AI</span>
+                     <span class="date-pill">Mar 2026 — Present</span>
+                  </div>
+
+                  <h3>
+                     Quality Analyst
+                     <span>(AI Evaluation & Prompt Engineering)</span>
+                  </h3>
+
+                  <p data-key="scaleai">
+                     Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured
+                     prompts, and robust validation frameworks. I develop evaluation criteria and validation systems to
+                     assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering
+                     failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.
+                  </p>
+
+                  <div class="badge-cloud">
+                     <span>Prompt Engineering</span>
+                     <span>AI Evaluation</span>
+                     <span>LLMs</span>
+                     <span>Scenario Design</span>
+                     <span>Validation Frameworks</span>
+                  </div>
+               </article>
+
+               <aside class="terminal-card reveal-card" aria-label="Current role terminal summary">
+                  <div class="terminal-header">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                  </div>
+
+                  <pre><code>
+role.current = {
+  company: "Scale AI",
+  role: "Quality Analyst",
+
+  focus: [
+    "AI evaluation",
+    "prompt engineering",
+    "system reliability"
+  ],
+
+  work: {
+    design: "complex evaluation scenarios",
+    analysis: "failure pattern detection",
+    validation: "multi-step reasoning systems"
+  },
+
+  impact: {
+    improve: ["consistency", "accuracy"],
+    ensure: "reliable AI behavior at scale"
+  }
+}
+</code></pre>
+               </aside>
+            </div>
          </div>
       </section>
 
-      <div class="background-speaking">
-         <div class="container d-flex">
-            <div class="row justify-content-center align-items-center img">
-               <div class="col-12 text-center">
-                  <h2 class="title-color-text text-highlight" data-key="speakingTitle">
-                     Speaking
-                  </h2>
-                  <br/>
-               </div>
-               <div class="col-12 col-lg-6 speaking">
-                  <p class="speaking-text" data-key="speakingText">
-                     As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within
-                     WordCamp. Additionally, I've made outstanding constributions to CS50x as a member of the teaching staff at CS50x.ni.
+      <!-- EXPERIENCE -->
+      <section class="experience-section section-panel" id="experience">
+         <div class="container">
+            <div class="section-heading">
+               <span class="section-eyebrow" data-key="experienceEyebrow">Career Timeline</span>
+               <h2 class="section-title" data-key="experienceTitle">Experiences</h2>
+            </div>
+
+            <div class="timeline">
+               <article class="timeline-item reveal-card">
+                  <div class="timeline-index">01</div>
+                  <div class="timeline-content">
+                     <div class="timeline-meta">
+                        <span>Scale AI</span>
+                        <span>Mar 2026 — Present</span>
+                     </div>
+                     <h3>
+                        Quality Analyst
+                        <a target="_blank" href="https://scale.com/">
+                           @ Scale AI <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                     </h3>
+                     <p data-key="scaleai">
+                        Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured
+                        prompts, and robust validation frameworks. I develop evaluation criteria and validation systems
+                        to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on
+                        uncovering failure patterns, improving consistency, and strengthening the reliability of AI
+                        systems at scale.
+                     </p>
+                     <div class="badge-cloud">
+                        <span>Prompt Engineering</span>
+                        <span>AI Evaluation</span>
+                        <span>Scenario Design</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="timeline-item reveal-card">
+                  <div class="timeline-index">02</div>
+                  <div class="timeline-content">
+                     <div class="timeline-meta">
+                        <span>AG Software</span>
+                        <span>May 2025 — Mar 2026</span>
+                     </div>
+                     <h3>
+                        Fullstack Developer
+                        <a target="_blank" href="https://www.agssa.net/">
+                           @ AG Software <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                     </h3>
+                     <p data-key="agsoftware">
+                        Contracted by AG Software to contribute to internal platforms for Classical Conversations, a
+                        global organization that supports homeschooling communities. I develop and maintain scalable web
+                        applications and APIs.
+                     </p>
+                     <div class="badge-cloud">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Node.js</span>
+                        <span>Fastify</span>
+                        <span>Knex</span>
+                        <span>Jest</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="timeline-item reveal-card">
+                  <div class="timeline-index">03</div>
+                  <div class="timeline-content">
+                     <div class="timeline-meta">
+                        <span>Sicsa</span>
+                        <span>Aug 2024 — Nov 2024</span>
+                     </div>
+                     <h3>
+                        Lead Frontend Developer
+                        <a target="_blank" href="https://www.sicsa.com.ni/">
+                           @ Sicsa <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                     </h3>
+                     <p data-key="sicsa">
+                        Led a team in transforming an online ordering platform that facilitates the dropshipping
+                        business model for clients, enabling the management of supplier data and the generation of sales
+                        orders.
+                     </p>
+                     <div class="badge-cloud">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>Tailwind</span>
+                        <span>UI</span>
+                        <span>UX</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="timeline-item reveal-card">
+                  <div class="timeline-index">04</div>
+                  <div class="timeline-content">
+                     <div class="timeline-meta">
+                        <span>Logacode</span>
+                        <span>Jul 2024 — Oct 2024</span>
+                     </div>
+                     <h3>
+                        Frontend Developer
+                        <a target="_blank" href="https://logacode.com/">
+                           @ Logacode <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                     </h3>
+                     <p data-key="logacode">
+                        Contributed to building new, visually appealing and user-friendly components for the project.
+                        Focused on improving the user interface and ensuring seamless interaction.
+                     </p>
+                     <div class="badge-cloud">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>Tailwind</span>
+                        <span>TypeScript</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="timeline-item reveal-card">
+                  <div class="timeline-index">05</div>
+                  <div class="timeline-content">
+                     <div class="timeline-meta">
+                        <span>Nicasource</span>
+                        <span>Jul 2021 — Sep 2023</span>
+                     </div>
+                     <h3>
+                        Engineering Team Lead
+                        <a target="_blank" href="https://nicasource.com/">
+                           @ Nicasource <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                     </h3>
+                     <p data-key="nicasource">
+                        Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital
+                        experiences for a diverse array of projects.
+                     </p>
+                     <div class="badge-cloud">
+                        <span>Angular</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>Express</span>
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <!-- SPEAKING -->
+      <section class="speaking-section section-panel" id="speaking">
+         <div class="container">
+            <div class="section-heading">
+               <span class="section-eyebrow" data-key="speakingEyebrow">Community & Teaching</span>
+               <h2 class="section-title" data-key="speakingTitle">Speaking</h2>
+            </div>
+
+            <div class="speaking-grid">
+               <div class="speaking-copy reveal-card">
+                  <p data-key="speakingText">
+                     As a Software Engineer, I've had the opportunity to share my knowledge at various speaking
+                     engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching
+                     technology, where I was responsible for teaching participants how to create video games without
+                     code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp
+                     within WordCamp. Additionally, I've made outstanding contributions to CS50x as a member of the
+                     teaching staff at CS50x.ni.
                   </p>
                </div>
-               <div class="col-10 col-lg-6 position-relative frame mt-speaking">
-                  <img src="img/ieee.jpg" class="img-fluid" alt="ieee sight puerto cabezas">
-                  <figcaption class="figcaption-sight">
-                     ISOC SIGHT Nicaragua Telecenter 2017
-                  </figcaption>
 
-                  <div class="position-absolute frame image-sight hide">
-                     <img src="img/CS50x.jpg" class="img-fluid" alt="Harvard certificate">
-                     <figcaption class="figcaption-cs50">
-                        Teaching staff at CS50x.ni
+               <div class="photo-stack reveal-card">
+                  <figure class="photo-card photo-main">
+                     <img src="img/ieee.jpg" alt="ISOC SIGHT Nicaragua Telecenter" />
+                     <figcaption>ISOC SIGHT Nicaragua Telecenter 2017</figcaption>
+                  </figure>
+
+                  <figure class="photo-card photo-secondary">
+                     <img src="img/CS50x.jpg" alt="Harvard certificate" />
+                     <figcaption>Teaching staff at CS50x.ni</figcaption>
+                  </figure>
+
+                  <figure class="photo-card photo-third">
+                     <img src="img/wdall.jpg" alt="KidsCamp by WordCamp Managua" />
+                     <figcaption>
+                        <a href="https://managua.wordcamp.org/2023/kids-camp/" target="_blank">
+                           KidsCamp Managua 2023
+                        </a>
                      </figcaption>
-                  </div>
+                  </figure>
                </div>
-
-               <div class="col-10 position-relative frame d-sm-block d-lg-none mt-5">
-                  <img src="img/CS50x.jpg" class="img-fluid" alt="Harvard certificate">
-                  <figcaption class="figcaption-cs50">
-                     Teaching staff at CS50x.ni
-                  </figcaption>
-               </div>
-
-               <div class="col-10 col-lg-8 position-relative frame image-wp mb-3">
-                  <img src="img/wdall.jpg" class="img-fluid" alt="KidsCamp by wordpress day 2023">
-                  <figcaption class="figcaption-wp">
-                     <a href="https://managua.wordcamp.org/2023/kids-camp/" target="_blank" class="jake-link">
-                        KidsCamp Managua 2023
-                     </a>
-                  </figcaption>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <section id="technologies" class="skills-section py-3">
-         <div class="container text-center">
-            <h2 class="title-color-text text-highlight mb-4" data-key="technologiesTitle">Technologies</h2>
-            <div class="row justify-content-center flex-wrap gap-4">
-               <div class="tech-box gsap-draggable"><img src="img/logos/javascript.png" alt="JavaScript" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/html.png" alt="HTML" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/css.png" alt="CSS" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/git.png" alt="Git" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/github.png" alt="GitHub" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/gitlab.png" alt="Gitlab" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/vscode.png" alt="VSCode" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/typescript.png" alt="TypeScript" /></div>
-
-               <div class="tech-box gsap-draggable"><img src="img/logos/react.png" alt="React" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/angular.png" alt="Angular" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/docker.png" alt="Docker" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/tailwind.png" alt="Tailwind CSS" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/bootstrap.png" alt="Bootstrap CSS" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/figma.png" alt="Figma" /></div>
-
-               <div class="tech-box gsap-draggable"><img src="img/logos/java.png" alt="Java" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/node.png" alt="Node.js" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/nest.png" alt="NestJS" /></div>
-
-               <div class="tech-box gsap-draggable"><img src="img/logos/mongo.png" alt="MongoDB" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/sql.png" alt="SQL" /></div>
-
-               <div class="tech-box gsap-draggable"><img src="img/logos/aws.png" alt="AWS" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/serverless.png" alt="Serverless" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/next.png" alt="Next.js" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/jest.png" alt="Jest" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/selenium.png" alt="Selenium" /></div>
-
-               <div class="tech-box gsap-draggable"><img src="img/logos/express.png" alt="Express" /></div>
-               <div class="tech-box gsap-draggable"><img src="img/logos/openIA.png" alt="OpenIA" /></div>
             </div>
          </div>
       </section>
 
-      <div class="btn_back-to-top" id="btn_back-to-top"></div>
+      <!-- TECHNOLOGIES -->
+      <section class="technologies-section section-panel" id="technologies">
+         <div class="container">
+            <div class="section-heading center">
+               <span class="section-eyebrow" data-key="technologiesEyebrow">Toolbox</span>
+               <h2 class="section-title" data-key="technologiesTitle">Technologies</h2>
+            </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            <div class="tech-grid">
+               <!-- FRONTEND CORE -->
+               <div class="tech-box magnetic"><img src="img/logos/javascript.png"
+                     alt="JavaScript" /><span>JavaScript</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/typescript.png"
+                     alt="TypeScript" /><span>TypeScript</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/react.png" alt="React" /><span>React</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/next.png" alt="Next.js" /><span>Next.js</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/tailwind.png" alt="Tailwind" /><span>Tailwind</span>
+               </div>
+               <div class="tech-box magnetic"><img src="img/logos/figma.png" alt="Figma" /><span>Figma</span></div>
 
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXDB014HWL"></script>
+               <!-- BACKEND / FULLSTACK -->
+               <div class="tech-box magnetic"><img src="img/logos/node.png" alt="Node.js" /><span>Node.js</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/nest.png" alt="NestJS" /><span>NestJS</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/sql.png" alt="SQL" /><span>SQL</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/mongo.png" alt="MongoDB" /><span>MongoDB</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/docker.png" alt="Docker" /><span>Docker</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/aws.png" alt="AWS" /><span>AWS</span></div>
 
-      <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.4"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.7"></script>
+               <!-- FUNDAMENTALS / OTHER -->
+               <div class="tech-box magnetic"><img src="img/logos/html.png" alt="HTML5" /><span>HTML</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/css.png" alt="CSS3" /><span>CSS</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/angular.png" alt="Angular" /><span>Angular</span>
+               </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+               <!-- TOOLS / QA / VERSIONING -->
+               <div class="tech-box magnetic"><img src="img/logos/jest.png" alt="Jest" /><span>Jest</span></div>
+               <div class="tech-box magnetic"><img src="img/logos/git.png" alt="Git" /><span>Git</span></div>
 
-      <!-- Lenis (smooth scroll) -->
-      <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+               <!-- AI -->
+               <div class="tech-box magnetic"><img src="img/logos/openIA.png" alt="OpenAI" /><span>AI</span></div>
+            </div>
+         </div>
+      </section>
 
-      <!-- Init Lenis -->
-      <script>
-        (function () {
-          // Basic Lenis setup
-          const lenis = new Lenis({
-            // Feel free to tweak these:
-            duration: 1.15,
-            smoothWheel: true,
-            smoothTouch: false,
-            wheelMultiplier: 1,
-            touchMultiplier: 1.25,
-          });
+      <!-- CONTACT -->
+      <section class="contact-section section-panel" id="contact">
+         <div class="container">
+            <div class="contact-card reveal-card">
+               <span class="section-eyebrow" data-key="contactEyebrow">Let’s build</span>
+               <h2 data-key="contactTitle">Reliable systems. Beautiful interfaces. Useful AI.</h2>
+               <p data-key="contactText">
+                  I enjoy building products that feel good, work reliably, and solve real problems.
+               </p>
 
-          window.lenis = lenis;
+               <div class="hero-actions">
+                  <a href="mailto:jackiezeledon@gmail.com" class="btn-primary-glow">
+                     <i class="bi bi-envelope"></i>
+                     Email me
+                  </a>
+                  <a href="https://github.com/JackZeled0n" target="_blank" class="btn-ghost">
+                     <i class="bi bi-github"></i>
+                     GitHub
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
 
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
+   <button class="back-to-top" id="btn_back-to-top" type="button" aria-label="Back to top">
+      <i class="bi bi-arrow-up"></i>
+   </button>
 
-          if (window.ScrollTrigger) {
-            lenis.on('scroll', ScrollTrigger.update);
-            ScrollTrigger.scrollerProxy(document.documentElement, {
-              scrollTop(value) {
-                if (arguments.length) lenis.scrollTo(value, { immediate: true });
-                return window.scrollY || document.documentElement.scrollTop;
-              },
-              getBoundingClientRect() {
-                return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-              },
-            });
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-            ScrollTrigger.addEventListener('refresh', () => lenis.resize());
-            ScrollTrigger.refresh();
-          }
-        })();
-      </script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXDB014HWL"></script>
 
-      <script src="js/script.js"></script>
-   </body>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+   <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js"></script>
+
+   <script src="js/script.js"></script>
+</body>
+
 </html>

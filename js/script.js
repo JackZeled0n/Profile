@@ -1,256 +1,521 @@
 window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'G-CXDB014HWL');
 
-const sunButton = document.getElementById('sun-button');
-const sunIcon = document.getElementById('sun-icon');
-const body = document.getElementById('body');
-const languageButton = document.getElementById('lang-button');
-let currentLanguage = 'en';
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag("js", new Date());
+gtag("config", "G-CXDB014HWL");
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+const body = document.getElementById("body");
+const themeButton = document.getElementById("sun-button");
+const themeIcon = document.getElementById("themeIcon");
+const languageButton = document.getElementById("lang-button");
+const backToTopButton = document.getElementById("btn_back-to-top");
+const cursorGlow = document.getElementById("cursorGlow");
+
+let currentLanguage = "en";
 
 const texts = {
     en: {
         experienceMenu: "Experiences",
         speakingMenu: "Speaking",
         technologiesMenu: "Technologies",
-        about: "I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and delivering outstanding results. My commitment to excellence drives me to continually improve and push boundaries in the field of software development.",
+        heroKicker: "Available for product, frontend and AI evaluation work",
+        heroRole: "Fullstack Engineer",
+        heroRoleSecond: "Frontend Specialist",
+        heroRoleThird: "AI Evaluation",
+        about:
+            "I specialize in crafting pixel-perfect, engaging and accessible digital experiences, leveraging my wealth of experience and expertise. With a focus on innovation and quality, I thrive on tackling challenges and delivering outstanding results.",
         downloadCv: "Download CV",
+        metricYears: "Since 2017",
+        metricSinceLabel: "Building software",
+        AI: "AI",
+        metricAI: "Evaluation workflows",
+        metricUI: "Accessible interfaces",
+        scrollCue: "Scroll",
+        scrollCueMobile: "Swipe",
+        currentEyebrow: "Current Mission",
+        currentTitle: "Building reliable AI evaluation systems",
+        experienceEyebrow: "Career Timeline",
         experienceTitle: "Experiences",
-        technologiesTitle: "Technologies",
-        agsoftware: "Contracted by AG Software to contribute to internal platforms for Classical Conversations, a global organization that supports homeschooling communities. I develop and maintain scalable web applications and APIs. My responsibilities also include writing unit and integration tests to ensure code reliability and maintainability across services used by thousands of families and educators worldwide.",
-        sicsa: "Led a team in transforming an online ordering platform that facilitates the dropshipping business model for clients, enabling the management of supplier data and the generation of sales orders for electronic components. Oversaw the unification of inconsistent UI elements, the development of new components, and the implementation of real-time notifications for product actions. Leveraged AJAX to optimize page interactions and significantly reduced code redundancy, achieving a cohesive, scalable, and visually consistent frontend architecture while fostering collaboration and maintaining high development standards.",
-        logacode: "Contributed to building new, visually appealing and user-friendly components for the project. Focused on improving the user interface and ensuring seamless interaction for a better user experience.",
-        nicasource: "Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck. As a Team Leader in the conversational development department, I provide leadership through close collaboration with the team, knowledge sharing, and spearheading the creation of internal tools to improve efficiency and work quality.",
-        atlas: "Built and maintained critical components used to improve Atlas Primer skill. Collaborated closely with cross-functional teams, including developers and key stakeholders, to implement best practices and enhance the skill. This collaborative effort ensures alignment with strategic objectives and fosters a culture of innovation and excellence throughout the organization.",
-        inss: "Led the QA team, overseeing the design, coding and implementation of a suite of testing tools and programs, covering database impacts, software scenarios, unit testing, end-to-end testing, error/bug retesting, and usability enhancements. Moreover, I employed design patterns to optimize algorithm workflows, significantly boosting overall efficiency.",
-        atomic: "Led the development of enriched user experiences and dynamic interactions, employing advanced animation methodologies to elevate engagement to new heights. Spearheaded the creation of front-end elements, refined visual design aesthetics, and prototyped for seamless integration across responsive platforms.",
+        speakingEyebrow: "Community & Teaching",
         speakingTitle: "Speaking",
-        speakingText: "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding constributions to CS50x as a member of the teaching staff at CS50x.ni.",
-        scaleai: "Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop detailed rubrics and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.",
+        technologiesEyebrow: "Toolbox",
+        technologiesTitle: "Technologies",
+        contactEyebrow: "Let’s build",
+        contactTitle: "Reliable systems. Beautiful interfaces. Useful AI.",
+        contactText:
+            "I enjoy building products that feel good, work reliably, and solve real problems.",
+        scaleai:
+            "Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop evaluation criteria and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.",
+        agsoftware:
+            "Contracted by AG Software to contribute to internal platforms for Classical Conversations, a global organization that supports homeschooling communities. I develop and maintain scalable web applications and APIs. My responsibilities also include writing unit and integration tests to ensure code reliability and maintainability across services used by thousands of families and educators worldwide.",
+        sicsa:
+            "Led a team in transforming an online ordering platform that facilitates the dropshipping business model for clients, enabling the management of supplier data and the generation of sales orders for electronic components. Oversaw the unification of inconsistent UI elements, the development of new components, and the implementation of real-time notifications for product actions.",
+        logacode:
+            "Contributed to building new, visually appealing and user-friendly components for the project. Focused on improving the user interface and ensuring seamless interaction for a better user experience.",
+        nicasource:
+            "Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck.",
+        speakingText:
+            "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding contributions to CS50x as a member of the teaching staff at CS50x.ni.",
     },
+
     sp: {
         experienceMenu: "Experiencias",
         speakingMenu: "Ponencias",
-        technologiesMenu: "Tecnologias",
-        about: "Me especializo en crear experiencias digitales precisas, atractivas y accesibles, aprovechando mi experiencia y conocimientos. Con un enfoque en la innovación y la calidad, prospero enfrentando desafíos y entregando resultados sobresalientes. Mi compromiso con la excelencia me impulsa a mejorar continuamente y a romper límites en el campo del desarrollo de software.",
+        technologiesMenu: "Tecnologías",
+        heroKicker: "Disponible para producto, frontend y evaluación de IA",
+        heroRole: "Ingeniero Fullstack",
+        heroRoleSecond: "Especialista en Frontend",
+        heroRoleThird: "Evaluación de IA",
+        about:
+            "Me especializo en crear experiencias digitales precisas, atractivas y accesibles, aprovechando mi experiencia y conocimientos. Con un enfoque en innovación y calidad, disfruto enfrentar desafíos y entregar resultados sólidos.",
         downloadCv: "Descargar CV",
+        metricYears: "Desde 2017",
+        metricSinceLabel: "Construyendo software",
+        AI: "IA",
+        metricAI: "Flujos de evaluación",
+        metricUI: "Interfaces accesibles",
+        scrollCue: "Scroll",
+        scrollCueMobile: "Desliza",
+        currentEyebrow: "Misión actual",
+        currentTitle: "Construyendo sistemas confiables de evaluación de IA",
+        experienceEyebrow: "Trayectoria profesional",
         experienceTitle: "Experiencias",
-        technologiesTitle: "Tecnologías",
-        agsoftware: "Contratado por AG Software para contribuir en plataformas internas de Classical Conversations, una organización global que apoya comunidades de educación en el hogar. Desarrollo y mantengo aplicaciones web escalables y APIs. También soy responsable de escribir pruebas unitarias y de integración para garantizar la confiabilidad y mantenibilidad del código en servicios utilizados por miles de familias y educadores en todo el mundo.",
-        sicsa: "Lideré un equipo en la transformación de una plataforma de pedidos en línea que facilita el modelo de negocio de dropshipping para los clientes, permitiendo la gestión de datos de proveedores y la generación de órdenes de venta de componentes electrónicos. Supervisé la unificación de elementos inconsistentes de la interfaz de usuario, el desarrollo de nuevos componentes y la implementación de notificaciones en tiempo real para las acciones de productos. Utilicé AJAX para optimizar las interacciones en las páginas y reduje significativamente la redundancia del código, logrando una arquitectura frontend cohesiva, escalable y visualmente consistente, mientras fomentaba la colaboración y mantenía altos estándares de desarrollo.",
-        logacode: "Contribuí a la construcción de nuevos componentes visualmente atractivos y fáciles de usar para el proyecto. Me enfoqué en mejorar la interfaz de usuario y asegurar una interacción fluida para una mejor experiencia del usuario.",
-        nicasource: "Construí, diseñé y entregué sitios web, aplicaciones web, habilidades de Alexa, chatbots y experiencias digitales de alta calidad para una variedad diversa de proyectos para clientes como iHeartMedia, Skilled Creative, Big spaceship, Studio IVL y Struck. Como Líder de Equipo en el departamento de desarrollo conversacional, proporciono liderazgo a través de una estrecha colaboración con el equipo, intercambio de conocimientos y liderazgo en la creación de herramientas internas para mejorar la eficiencia y la calidad del trabajo.",
-        atlas: "Construí y mantuve componentes críticos utilizados para mejorar la habilidad de Atlas Primer. Colaboré estrechamente con equipos multifuncionales, incluidos desarrolladores y partes interesadas clave, para aplicar las mejores prácticas y mejorar la habilidad. Este esfuerzo colaborativo asegura la alineación con los objetivos estratégicos y fomenta una cultura de innovación y excelencia en toda la organización.",
-        inss: "Dirigí el equipo de control de calidad, supervisando el diseño, la codificación y la implantación de un conjunto de herramientas y programas de pruebas, que abarcaban impactos en bases de datos, escenarios de software, pruebas unitarias, pruebas de extremo a extremo, repetición de pruebas de errores y fallos, y mejoras de la usabilidad. Además, empleé patrones de diseño para optimizar los flujos de trabajo de los algoritmos, aumentando significativamente la eficiencia general.",
-        atomic: "Dirigí el desarrollo de experiencias de usuario enriquecidas e interacciones dinámicas, empleando metodologías avanzadas de animación para elevar el compromiso a nuevos niveles. Encabecé la creación de elementos front-end, refiné la estética del diseño visual y prototipé para una integración fluida en plataformas responsivas.",
+        speakingEyebrow: "Comunidad y enseñanza",
         speakingTitle: "Ponencias",
-        speakingText: "Como Ingeniero de Software, he tenido la oportunidad de compartir mis conocimientos en diversas presentaciones. Colaboré con ISOC SIGHT Nicaragua para establecer un telecentro destinado a enseñar tecnología, donde fui responsable de enseñar a los participantes cómo crear videojuegos sin código utilizando Scratch. En 2023, impartí un curso llamado 'Minecraft Hour of Code' en el campamento infantil dentro de WordCamp. Además, he realizado contribuciones destacadas a CS50x como miembro del equipo docente en CS50x.ni.",
-        scaleai: "Diseño y evalúo flujos complejos impulsados por IA mediante la creación de escenarios, prompts estructurados y marcos de validación robustos. Desarrollo rúbricas detalladas y sistemas de validación para evaluar el razonamiento, la precisión y la toma de decisiones en múltiples pasos, mejorando la consistencia y confiabilidad de los sistemas de IA a escala.",
-    }
+        technologiesEyebrow: "Herramientas",
+        technologiesTitle: "Tecnologías",
+        contactEyebrow: "Construyamos",
+        contactTitle: "Sistemas confiables. Interfaces hermosas. IA útil.",
+        contactText:
+            "Disfruto construir productos que se sienten bien, funcionan de forma confiable y resuelven problemas reales.",
+        scaleai:
+            "Diseño y evalúo flujos complejos impulsados por IA mediante la creación de escenarios de alta calidad, prompts estructurados y marcos de validación robustos. Desarrollo criterios de evaluación y sistemas de validación para analizar el razonamiento, la precisión y la toma de decisiones en múltiples pasos.",
+        agsoftware:
+            "Contratado por AG Software para contribuir en plataformas internas de Classical Conversations, una organización global que apoya comunidades de educación en el hogar. Desarrollo y mantengo aplicaciones web escalables y APIs, además de escribir pruebas unitarias e integración.",
+        sicsa:
+            "Lideré un equipo en la transformación de una plataforma de pedidos en línea orientada al modelo de dropshipping, permitiendo la gestión de proveedores y generación de órdenes de venta. Supervisé la unificación de la interfaz, nuevos componentes y notificaciones en tiempo real.",
+        logacode:
+            "Contribuí a construir componentes visualmente atractivos y fáciles de usar. Me enfoqué en mejorar la interfaz y asegurar una interacción fluida para una mejor experiencia de usuario.",
+        nicasource:
+            "Construí, diseñé y entregué sitios web, aplicaciones web, habilidades de Alexa, chatbots y experiencias digitales para diversos clientes. Como líder de equipo, colaboré de cerca con el equipo y lideré herramientas internas para mejorar eficiencia y calidad.",
+        speakingText:
+            "Como Ingeniero de Software, he tenido la oportunidad de compartir mis conocimientos en distintas presentaciones. Colaboré con ISOC SIGHT Nicaragua para establecer un telecentro enfocado en enseñar tecnología. En 2023 impartí 'Minecraft Hour of Code' en Kids Camp dentro de WordCamp. También he contribuido a CS50x como parte del equipo docente en CS50x.ni.",
+    },
 };
-
-window.addEventListener('load', function () {
-    const hero = document.getElementById('hero');
-
-    function updateMousePosition(event) {
-        hero.style.setProperty('--x', `${event.clientX}px`);
-        hero.style.setProperty('--y', `${event.clientY}px`);
-    }
-
-    window.addEventListener('mousemove', updateMousePosition);
-});
-
-sunButton.addEventListener('click', () => {
-    const isLightMode = sunIcon.src.includes('img/theme-light.svg');
-    sunIcon.src = isLightMode ? 'img/theme-dark.svg' : 'img/theme-light.svg';
-    body.classList.toggle('dark-mode', isLightMode);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.main-link');
-    const sections = document.querySelectorAll('section');
-
-    function highlightActiveLink() {
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection);
-        });
-    }
-
-    highlightActiveLink();
-    document.addEventListener('scroll', highlightActiveLink);
-});
-
-const backToTopButton = document.getElementById('btn_back-to-top');
-
-window.addEventListener('scroll', () => {
-    backToTopButton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? 'block' : 'none';
-});
-
-backToTopButton.addEventListener('click', () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
-languageButton.addEventListener('click', () => {
-    const newLanguage = currentLanguage === 'en' ? 'sp' : 'en';
-    changeLanguage(newLanguage);
-});
 
 function changeLanguage(lang) {
     currentLanguage = lang;
+    languageButton.textContent = lang === "en" ? "EN" : "ES";
 
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        element.textContent = texts[lang][key];
+    document.querySelectorAll("[data-key]").forEach((element) => {
+        const key = element.getAttribute("data-key");
+
+        if (texts[lang][key]) {
+            element.textContent = texts[lang][key];
+        }
+    });
+
+    updateScrollCueText();
+}
+
+function initLenis() {
+    if (!window.Lenis) return;
+
+    const lenis = new Lenis({
+        duration: 1.15,
+        smoothWheel: true,
+        smoothTouch: false,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.25,
+    });
+
+    window.lenis = lenis;
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+}
+
+function initTheme() {
+    body.classList.add("light-mode");
+
+    themeButton.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        const isLightMode = body.classList.contains("light-mode");
+
+        themeIcon.className = isLightMode ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
     });
 }
 
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('ul.header-menu');
-    const nameSectionTop = document.getElementById('name').getBoundingClientRect().top;
-    header.classList.toggle('blur', nameSectionTop <= 0);
-});
+function initCursorGlow() {
+    if (!cursorGlow) return;
 
-gsap.registerPlugin(SplitText);
-
-window.addEventListener("load", () => {
-    const split = SplitText.create(".split", {
-        type: "chars",
-        onSplit(self) {
-            gsap.fromTo(self.chars,
-                { y: 100, autoAlpha: 0 },
-                {
-                    y: 0,
-                    autoAlpha: 1,
-                    duration: 1,
-                    stagger: 0.05,
-                    ease: "back.out(1.7)"
-                }
-            );
-        }
+    window.addEventListener("mousemove", (event) => {
+        gsap.to(cursorGlow, {
+            x: event.clientX,
+            y: event.clientY,
+            duration: 0.7,
+            ease: "power3.out",
+        });
     });
-});
+}
 
-gsap.registerPlugin(ScrollTrigger, Draggable)
+function initHeaderActiveState() {
+    const navLinks = document.querySelectorAll("[data-section-link]");
+    const sections = document.querySelectorAll("main section[id]");
 
-function initDeveloperSignatureAnimation() {
-    const hero = document.getElementById("hero");
-    const chips = gsap.utils.toArray(".code-chip");
+    function setActiveLink() {
+        let currentId = "home";
 
-    if (!hero || !chips.length) return;
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= window.innerHeight * 0.35) {
+                currentId = section.id;
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.toggle("active", link.dataset.sectionLink === currentId);
+        });
+    }
+
+    setActiveLink();
+    window.addEventListener("scroll", setActiveLink);
+}
+
+function initHeroAnimation() {
+    const split = SplitText.create(".split-title", {
+        type: "chars",
+        charsClass: "char",
+    });
 
     const tl = gsap.timeline({
         defaults: {
-            ease: "power3.out",
-            duration: 1,
+            ease: "power4.out",
+            duration: 1.1,
         },
     });
 
-    tl.from(chips, {
+    tl.from(split.chars, {
+        yPercent: 120,
+        rotation: 8,
         autoAlpha: 0,
-        y: 24,
-        scale: 0.9,
-        stagger: 0.12,
+        stagger: {
+            each: 0.025,
+            from: "center",
+        },
+    })
+        .from(
+            ".reveal-text",
+            {
+                y: 28,
+                autoAlpha: 0,
+                stagger: 0.08,
+            },
+            "-=0.75"
+        )
+        .from(
+            ".floating-code",
+            {
+                y: 24,
+                autoAlpha: 0,
+                scale: 0.92,
+                stagger: 0.12,
+            },
+            "-=0.8"
+        )
+        .from(
+            ".site-header",
+            {
+                y: -30,
+                autoAlpha: 0,
+            },
+            "-=0.9"
+        );
+
+    gsap.to(".orb-one", {
+        x: 80,
+        y: 40,
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
     });
 
-    chips.forEach((chip, index) => {
-        gsap.to(chip, {
-            y: index % 2 === 0 ? -16 : 16,
-            x: index % 2 === 0 ? 10 : -10,
-            rotation: index % 2 === 0 ? 2 : -2,
-            duration: 3 + index * 0.35,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
+    gsap.to(".orb-two", {
+        x: -80,
+        y: 50,
+        duration: 9,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+    });
+
+    gsap.to(".orb-three", {
+        y: -80,
+        duration: 10,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+    });
+
+    gsap.to(".floating-code", {
+        y: (index) => (index % 2 === 0 ? -18 : 18),
+        x: (index) => (index % 2 === 0 ? 12 : -12),
+        rotation: (index) => (index % 2 === 0 ? 2 : -2),
+        duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: 0.2,
+    });
+}
+
+function initHeroScrollScene() {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+        },
+    });
+
+    tl.to(
+        ".hero-title",
+        {
+            yPercent: -18,
+            scale: 0.92,
+            ease: "none",
+        },
+        0
+    )
+        .to(
+            ".hero-bg",
+            {
+                yPercent: 18,
+                ease: "none",
+            },
+            0
+        )
+        .to(
+            ".floating-code",
+            {
+                yPercent: -55,
+                opacity: 0.85,
+                ease: "none",
+            },
+            0
+        );
+}
+
+function initRevealAnimations() {
+    gsap.utils.toArray(".reveal-card").forEach((card) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top 82%",
+                once: true,
+            },
+            y: 54,
+            autoAlpha: 0,
+            scale: 0.98,
+            duration: 0.9,
+            ease: "power3.out",
         });
     });
 
-    hero.addEventListener("mousemove", (event) => {
-        const rect = hero.getBoundingClientRect();
-        const x = (event.clientX - rect.left - rect.width / 2) / rect.width;
-        const y = (event.clientY - rect.top - rect.height / 2) / rect.height;
-
-        gsap.to(chips, {
-            xPercent: x * 10,
-            yPercent: y * 10,
-            duration: 0.6,
-            ease: "power2.out",
-            overwrite: "auto",
+    gsap.utils.toArray(".section-heading").forEach((heading) => {
+        gsap.from(heading, {
+            scrollTrigger: {
+                trigger: heading,
+                start: "top 85%",
+                once: true,
+            },
+            y: 40,
+            autoAlpha: 0,
+            duration: 0.85,
+            ease: "power3.out",
         });
     });
 }
 
-window.addEventListener("load", initDeveloperSignatureAnimation);
+function initTimelineAnimation() {
+    gsap.utils.toArray(".timeline-item").forEach((item) => {
+        const index = item.querySelector(".timeline-index");
 
-gsap.from(".tech-box", {
-    scrollTrigger: {
-        trigger: "#technologies",
-        start: "top 80%"
-    },
-    y: 0,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power2.out",
-    stagger: {
-        amount: 1,
-        grid: [6, 6],
-        from: "start"
-    }
-});
+        if (!index) return;
 
-Draggable.create(".gsap-draggable", {
-    type: "x,y",
-    edgeResistance: 0,
-    bounds: "#technologies",
-    minimumMovement: 2,
-    onPress() {
-        gsap.to(this.target, { scale: 1.15, duration: 0.1 });
-    },
-    onRelease() {
-        gsap.to(this.target, {
-            scale: 1,
-            duration: 0.1,
-            ease: "power2.out"
-        });
-    }
-});
-
-function animateExperienceCards() {
-  const cards = document.querySelectorAll(".tab-pane.active .card");
-
-  if (!cards.length) return;
-
-  gsap.fromTo(cards,
-    {
-      y: 30,
-      autoAlpha: 0,
-      scale: 0.98
-    },
-    {
-      y: 0,
-      autoAlpha: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "power3.out"
-    }
-  );
+        gsap.fromTo(
+            index,
+            {
+                scale: 0.9,
+                opacity: 0.75,
+            },
+            {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    end: "bottom 55%",
+                    scrub: true,
+                },
+                scale: 1,
+                opacity: 1,
+                ease: "none",
+            }
+        );
+    });
 }
 
-// Bootstrap tab event
-document.querySelectorAll('[data-bs-toggle="pill"]').forEach(btn => {
-  btn.addEventListener("shown.bs.tab", () => {
-    animateExperienceCards();
-  });
+function initTechAnimation() {
+    gsap.from(".tech-box", {
+        scrollTrigger: {
+            trigger: ".tech-grid",
+            start: "top 80%",
+            once: true,
+        },
+        y: 40,
+        autoAlpha: 0,
+        scale: 0.92,
+        duration: 0.8,
+        ease: "back.out(1.4)",
+        stagger: {
+            amount: 0.9,
+            from: "center",
+        },
+    });
+}
+
+function initMagneticHover() {
+    const magneticItems = document.querySelectorAll(".magnetic");
+
+    magneticItems.forEach((item) => {
+        item.addEventListener("mousemove", (event) => {
+            const rect = item.getBoundingClientRect();
+            const relX = event.clientX - rect.left - rect.width / 2;
+            const relY = event.clientY - rect.top - rect.height / 2;
+
+            gsap.to(item, {
+                x: relX * 0.12,
+                y: relY * 0.12,
+                rotationX: -relY * 0.04,
+                rotationY: relX * 0.04,
+                scale: 1.04,
+                duration: 0.35,
+                ease: "power3.out",
+            });
+        });
+
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, {
+                x: 0,
+                y: 0,
+                rotationX: 0,
+                rotationY: 0,
+                scale: 1,
+                duration: 0.5,
+                ease: "elastic.out(1, 0.35)",
+            });
+        });
+    });
+}
+
+function initPhotoParallax() {
+    gsap.utils.toArray(".photo-card").forEach((photo, index) => {
+        gsap.to(photo, {
+            scrollTrigger: {
+                trigger: ".speaking-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+            },
+            y: index % 2 === 0 ? -80 : 80,
+            ease: "none",
+        });
+    });
+}
+
+function initBackToTop() {
+    window.addEventListener("scroll", () => {
+        const shouldShow = window.scrollY > 500;
+        backToTopButton.classList.toggle("show", shouldShow);
+    });
+
+    backToTopButton.addEventListener("click", () => {
+        if (window.lenis) {
+            window.lenis.scrollTo(0);
+            return;
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+}
+
+function initLanguageToggle() {
+    languageButton.addEventListener("click", () => {
+        const newLanguage = currentLanguage === "en" ? "sp" : "en";
+        changeLanguage(newLanguage);
+    });
+
+    changeLanguage(currentLanguage);
+}
+
+function updateScrollCueText() {
+    const scrollText = document.querySelector("[data-key='scrollCue']");
+    if (!scrollText) return;
+
+    const isMobile = window.innerWidth <= 640;
+
+    const key = isMobile ? "scrollCueMobile" : "scrollCue";
+
+    if (texts[currentLanguage][key]) {
+        scrollText.textContent = texts[currentLanguage][key];
+    }
+}
+
+function initReducedMotionGuard() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        gsap.globalTimeline.clear();
+    }
+}
+
+window.addEventListener("load", () => {
+    initLenis();
+    initTheme();
+    initLanguageToggle();
+    initCursorGlow();
+    initHeaderActiveState();
+    initHeroAnimation();
+    initHeroScrollScene();
+    initRevealAnimations();
+    initTimelineAnimation();
+    initTechAnimation();
+    initMagneticHover();
+    initPhotoParallax();
+    initBackToTop();
+    initReducedMotionGuard();
+    updateScrollCueText();
+    ScrollTrigger.refresh();
+});
+
+window.addEventListener("resize", () => {
+    updateScrollCueText();
+
+    gsap.set(".scroll-cue", { autoAlpha: 1 });
 });
