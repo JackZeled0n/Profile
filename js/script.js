@@ -152,8 +152,6 @@ function initLenis() {
 }
 
 function initTheme() {
-    body.classList.add("light-mode");
-
     function toggleTheme() {
         body.classList.toggle("light-mode");
         const isLightMode = body.classList.contains("light-mode");
