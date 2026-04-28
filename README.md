@@ -1,22 +1,27 @@
 
-# Jake Zeledón - Personal Portfolio
+# Jake Zeledón — Personal Portfolio
 
-This is my personal portfolio showcasing my work as a Fullstack Software Engineer. It includes my experience, skills, and projects I've worked on, with a focus on delivering pixel-perfect, engaging, and accessible digital experiences.
+Modern, interactive portfolio showcasing my work as a Fullstack Software Engineer with a strong focus on frontend systems and AI evaluation.
+
+Designed to highlight real-world experience through clean UI, smooth interactions, and a strong emphasis on accessibility and performance.
 
 <div align="center">
   <img src="./img/Finn&Jake.gif" alt="Finn & Jake">
 </div>
 
 
-## 🚀 Technologies Used
+## 🚀 Tech Stack
 
-- **Frontend:**
+- **Frontend**
   - HTML5
-  - CSS3 (using Bootstrap 5)
+  - CSS3 (custom, no frameworks)
   - JavaScript (ES6+)
 
-- **Other Tools:**
-  - Git & GitHub for version control
+- **Libraries & Interaction**
+  - GSAP (animations & scroll-based interactions)
+
+- **Other Tools**
+  - Git & GitHub
 
 ## ✨ Features
 
