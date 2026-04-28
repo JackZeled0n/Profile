@@ -33,8 +33,7 @@
          <a href="#current" class="nav-link" data-section-link="current">Current</a>
          <a href="#experience" class="nav-link" data-section-link="experience" data-key="experienceMenu">Experiences</a>
          <a href="#speaking" class="nav-link" data-section-link="speaking" data-key="speakingMenu">Speaking</a>
-         <a href="#technologies" class="nav-link" data-section-link="technologies"
-            data-key="technologiesMenu">Technologies</a>
+         <a href="#technologies" class="nav-link" data-section-link="technologies">Stack</a>
       </nav>
 
       <div class="header-actions">
@@ -46,7 +45,38 @@
             <i id="themeIcon" class="bi bi-sun-fill"></i>
          </button>
       </div>
+
+      <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Open menu">
+         <span></span>
+         <span></span>
+      </button>
    </header>
+
+   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="mobile-menu-close" id="mobile-menu-close" type="button" aria-label="Close menu">
+         <i class="bi bi-x-lg"></i>
+      </button>
+
+      <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+         <a href="#home" class="mobile-menu-link">Me</a>
+         <a href="#current" class="mobile-menu-link">Current</a>
+         <a href="#experience" class="mobile-menu-link" data-key="experienceMenu">Experiences</a>
+         <a href="#speaking" class="mobile-menu-link" data-key="speakingMenu">Speaking</a>
+         <a href="#technologies" class="mobile-menu-link">Stack</a>
+      </nav>
+
+      <div class="mobile-menu-actions">
+         <button id="mobile-lang-button" class="mobile-menu-action" type="button">
+            <i class="bi bi-globe2"></i>
+            <span>EN</span>
+         </button>
+
+         <button id="mobile-sun-button" class="mobile-menu-action" type="button">
+            <i id="mobileThemeIcon" class="bi bi-sun-fill"></i>
+            <span>Theme</span>
+         </button>
+      </div>
+   </div>
 
    <main>
       <!-- HERO -->
@@ -407,12 +437,12 @@ role.current = {
          </div>
       </section>
 
-      <!-- TECHNOLOGIES -->
+      <!-- STACK -->
       <section class="technologies-section section-panel" id="technologies">
          <div class="container">
             <div class="section-heading center">
                <span class="section-eyebrow" data-key="technologiesEyebrow">Toolbox</span>
-               <h2 class="section-title" data-key="technologiesTitle">Technologies</h2>
+               <h2 class="section-title" data-key="technologiesTitle">Stack</h2>
             </div>
 
             <div class="tech-grid">
@@ -475,6 +505,19 @@ role.current = {
          </div>
       </section>
    </main>
+
+   <footer class="site-footer">
+      <div class="footer-content">
+
+         <p class="footer-title">
+            Let’s build something great.
+         </p>
+
+         <p class="footer-copy">
+            © 2026 Jake Zeledón - Built with love.
+         </p>
+      </div>
+   </footer>
 
    <button class="back-to-top" id="btn_back-to-top" type="button" aria-label="Back to top">
       <i class="bi bi-arrow-up"></i>

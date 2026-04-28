@@ -15,6 +15,12 @@ const themeIcon = document.getElementById("themeIcon");
 const languageButton = document.getElementById("lang-button");
 const backToTopButton = document.getElementById("btn_back-to-top");
 const cursorGlow = document.getElementById("cursorGlow");
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+const mobileMenuClose = document.getElementById("mobile-menu-close");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileLangButton = document.getElementById("mobile-lang-button");
+const mobileSunButton = document.getElementById("mobile-sun-button");
+const mobileThemeIcon = document.getElementById("mobileThemeIcon");
 
 let currentLanguage = "en";
 
@@ -22,7 +28,6 @@ const texts = {
     en: {
         experienceMenu: "Experiences",
         speakingMenu: "Speaking",
-        technologiesMenu: "Technologies",
         heroKicker: "Available for product, frontend and AI evaluation work",
         heroRole: "Fullstack Engineer",
         heroRoleSecond: "Frontend Specialist",
@@ -44,7 +49,6 @@ const texts = {
         speakingEyebrow: "Community & Teaching",
         speakingTitle: "Speaking",
         technologiesEyebrow: "Toolbox",
-        technologiesTitle: "Technologies",
         contactEyebrow: "Let’s build",
         contactTitle: "Reliable systems. Beautiful interfaces. Useful AI.",
         contactText:
@@ -66,7 +70,6 @@ const texts = {
     sp: {
         experienceMenu: "Experiencias",
         speakingMenu: "Ponencias",
-        technologiesMenu: "Tecnologías",
         heroKicker: "Disponible para producto, frontend y evaluación de IA",
         heroRole: "Ingeniero Fullstack",
         heroRoleSecond: "Especialista en Frontend",
@@ -88,7 +91,6 @@ const texts = {
         speakingEyebrow: "Comunidad y enseñanza",
         speakingTitle: "Ponencias",
         technologiesEyebrow: "Herramientas",
-        technologiesTitle: "Tecnologías",
         contactEyebrow: "Construyamos",
         contactTitle: "Sistemas confiables. Interfaces hermosas. IA útil.",
         contactText:
@@ -111,6 +113,10 @@ const texts = {
 function changeLanguage(lang) {
     currentLanguage = lang;
     languageButton.textContent = lang === "en" ? "EN" : "ES";
+
+    if (mobileLangButton) {
+        mobileLangButton.querySelector("span").textContent = lang === "en" ? "EN" : "ES";
+    }
 
     document.querySelectorAll("[data-key]").forEach((element) => {
         const key = element.getAttribute("data-key");
@@ -148,12 +154,22 @@ function initLenis() {
 function initTheme() {
     body.classList.add("light-mode");
 
-    themeButton.addEventListener("click", () => {
+    function toggleTheme() {
         body.classList.toggle("light-mode");
         const isLightMode = body.classList.contains("light-mode");
 
         themeIcon.className = isLightMode ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
-    });
+
+        if (mobileThemeIcon) {
+            mobileThemeIcon.className = isLightMode ? "bi bi-sun-fill" : "bi bi-moon-stars-fill";
+        }
+    }
+
+    themeButton.addEventListener("click", toggleTheme);
+
+    if (mobileSunButton) {
+        mobileSunButton.addEventListener("click", toggleTheme);
+    }
 }
 
 function initCursorGlow() {
@@ -170,7 +186,8 @@ function initCursorGlow() {
 }
 
 function initHeaderActiveState() {
-    const navLinks = document.querySelectorAll("[data-section-link]");
+    const desktopLinks = document.querySelectorAll("[data-section-link]");
+    const mobileLinks = document.querySelectorAll(".mobile-menu-link");
     const sections = document.querySelectorAll("main section[id]");
 
     function setActiveLink() {
@@ -184,8 +201,15 @@ function initHeaderActiveState() {
             }
         });
 
-        navLinks.forEach((link) => {
+        desktopLinks.forEach((link) => {
             link.classList.toggle("active", link.dataset.sectionLink === currentId);
+        });
+
+        mobileLinks.forEach((link) => {
+            link.classList.toggle(
+                "is-active",
+                link.getAttribute("href") === `#${currentId}`
+            );
         });
     }
 
@@ -470,6 +494,13 @@ function initLanguageToggle() {
         changeLanguage(newLanguage);
     });
 
+    if (mobileLangButton) {
+        mobileLangButton.addEventListener("click", () => {
+            const newLanguage = currentLanguage === "en" ? "sp" : "en";
+            changeLanguage(newLanguage);
+        });
+    }
+
     changeLanguage(currentLanguage);
 }
 
@@ -495,6 +526,29 @@ function initReducedMotionGuard() {
     }
 }
 
+function initMobileMenu() {
+    if (!mobileMenu || !mobileMenuButton || !mobileMenuClose) return;
+
+    function openMenu() {
+        mobileMenu.classList.add("is-open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove("is-open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        body.style.overflow = "";
+    }
+
+    mobileMenuButton.addEventListener("click", openMenu);
+    mobileMenuClose.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".mobile-menu-link").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+}
+
 window.addEventListener("load", () => {
     initLenis();
     initTheme();
@@ -511,6 +565,7 @@ window.addEventListener("load", () => {
     initBackToTop();
     initReducedMotionGuard();
     updateScrollCueText();
+    initMobileMenu();
     ScrollTrigger.refresh();
 });
 
