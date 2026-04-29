@@ -62,52 +62,70 @@ const texts = {
         logacode:
             "Contributed to building new, visually appealing and user-friendly components for the project. Focused on improving the user interface and ensuring seamless interaction for a better user experience.",
         nicasource:
-            "Built, styled, and delivered high-quality websites, web apps, Alexa skills, chatbots and digital experiences for a diverse array of projects for clients including iHeartMedia, Skilled Creative, Big spaceship, Studio IVL, and Struck.",
+            "Contributed to the development and evolution of voice-driven products across multiple platforms, working on both user-facing experiences and supporting systems. Improved reliability and scalability by modernizing legacy components, introducing frontend solutions, and supporting deployment workflows in cloud and serverless environments. Collaborated on high-traffic integrations, optimizing data handling and request flows. As Team Lead, guided a voice-focused team, ensuring consistent delivery, technical quality, and collaboration across projects.",
+        atlas:
+            "Contributed to Atlas Primer, a voice-enabled learning experience available through Alexa and Google Assistant. Implemented fixes and new features for the product, helping improve stability, functionality, and the overall experience of interacting with learning content through voice.",
+        inss:
+            "Owned quality assurance for the pensions module, validating both business rules and system behavior through unit and integration testing. Built automated testing workflows by integrating Selenium with Java-based test suites, improving reliability and coverage. Led a QA team to ensure full validation of the module, including complex financial calculations. Leveraged SQL to extract and prepare test data, transforming it into structured inputs for automated tests. Increased test coverage to over 85%, significantly improving system stability.",
+        atomic:
+            "Led frontend development as a freelancer, defining the visual architecture of applications and ensuring consistency across the entire interface. Implemented reusable component systems based on Atomic Design, maintaining coherence between layouts, styles, and UI behavior. Focused on building clean, aligned, and scalable user experiences, using tools like Adobe XD to design and validate interfaces before implementation.",
+        inssRole1: "Programmer · Feb 2021 — Jun 2021",
+        inssRole2: "System Integrator · Apr 2018 — Jan 2021",
+        inssRole3: "Digitalization Operator · Apr 2017 — Mar 2018",
         speakingText:
             "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding contributions to CS50x as a member of the teaching staff at CS50x.ni.",
     },
 
     sp: {
-        experienceMenu: "Experiencias",
+        experienceMenu: "Experiencia",
         speakingMenu: "Ponencias",
-        heroKicker: "Disponible para producto, frontend y evaluación de IA",
+        heroKicker: "Disponible para desarrollo frontend, producto y evaluación de IA",
         heroRole: "Ingeniero Fullstack",
-        heroRoleSecond: "Especialista en Frontend",
+        heroRoleSecond: "Especialista Frontend",
         heroRoleThird: "Evaluación de IA",
         about:
-            "Me especializo en crear experiencias digitales precisas, atractivas y accesibles, aprovechando mi experiencia y conocimientos. Con un enfoque en innovación y calidad, disfruto enfrentar desafíos y entregar resultados sólidos.",
+            "Me especializo en construir interfaces modernas, accesibles y de alto impacto. Combino diseño, desarrollo y pensamiento crítico para crear productos digitales confiables, escalables y centrados en el usuario.",
         downloadCv: "Descargar CV",
         metricYears: "Desde 2017",
         metricSinceLabel: "Construyendo software",
         AI: "IA",
-        metricAI: "Flujos de evaluación",
+        metricAI: "Evaluación y validación",
         metricUI: "Interfaces accesibles",
         scrollCue: "Scroll",
         scrollCueMobile: "Desliza",
-        currentEyebrow: "Misión actual",
+        currentEyebrow: "Enfoque actual",
         currentTitle: "Construyendo sistemas confiables de evaluación de IA",
         experienceEyebrow: "Trayectoria profesional",
-        experienceTitle: "Experiencias",
+        experienceTitle: "Experiencia",
         speakingEyebrow: "Comunidad y enseñanza",
         speakingTitle: "Ponencias",
-        technologiesEyebrow: "Herramientas",
+        technologiesEyebrow: "Tecnologías",
         contactEyebrow: "Construyamos",
-        contactTitle: "Sistemas confiables. Interfaces hermosas. IA útil.",
+        contactTitle: "Sistemas confiables. Interfaces de alto nivel. IA útil.",
         contactText:
-            "Disfruto construir productos que se sienten bien, funcionan de forma confiable y resuelven problemas reales.",
+            "Disfruto crear productos que se ven bien, funcionan mejor y resuelven problemas reales.",
         scaleai:
-            "Diseño y evalúo flujos complejos impulsados por IA mediante la creación de escenarios de alta calidad, prompts estructurados y marcos de validación robustos. Desarrollo criterios de evaluación y sistemas de validación para analizar el razonamiento, la precisión y la toma de decisiones en múltiples pasos.",
+            "Diseño y evalúo flujos complejos impulsados por inteligencia artificial mediante escenarios bien estructurados, prompts precisos y marcos de validación robustos. Desarrollo criterios de evaluación para analizar razonamiento, precisión y toma de decisiones en múltiples pasos, enfocándome en detectar fallos, mejorar consistencia y asegurar comportamiento confiable a escala.",
         agsoftware:
-            "Contratado por AG Software para contribuir en plataformas internas de Classical Conversations, una organización global que apoya comunidades de educación en el hogar. Desarrollo y mantengo aplicaciones web escalables y APIs, además de escribir pruebas unitarias e integración.",
+            "Colaboré en el desarrollo de plataformas internas para Classical Conversations, una organización global enfocada en educación. Construí y mantuve aplicaciones web y APIs escalables, además de implementar pruebas unitarias e integración para garantizar confiabilidad y mantenibilidad en sistemas utilizados por miles de usuarios.",
         sicsa:
-            "Lideré un equipo en la transformación de una plataforma de pedidos en línea orientada al modelo de dropshipping, permitiendo la gestión de proveedores y generación de órdenes de venta. Supervisé la unificación de la interfaz, nuevos componentes y notificaciones en tiempo real.",
+            "Lideré la transformación de una plataforma de pedidos orientada al modelo de dropshipping. Supervisé la unificación de la interfaz, el desarrollo de nuevos componentes y la implementación de notificaciones en tiempo real, logrando una experiencia más coherente, eficiente y escalable.",
         logacode:
-            "Contribuí a construir componentes visualmente atractivos y fáciles de usar. Me enfoqué en mejorar la interfaz y asegurar una interacción fluida para una mejor experiencia de usuario.",
+            "Desarrollé componentes modernos, visualmente atractivos y centrados en la experiencia del usuario. Me enfoqué en mejorar la interfaz y garantizar interacciones fluidas dentro de la aplicación.",
         nicasource:
-            "Construí, diseñé y entregué sitios web, aplicaciones web, habilidades de Alexa, chatbots y experiencias digitales para diversos clientes. Como líder de equipo, colaboré de cerca con el equipo y lideré herramientas internas para mejorar eficiencia y calidad.",
+            "Contribuí al desarrollo y evolución de productos basados en voz en múltiples plataformas, trabajando tanto en experiencias de usuario como en sistemas de soporte. Mejoré la confiabilidad y escalabilidad mediante la modernización de componentes legacy, la implementación de soluciones frontend y el apoyo a procesos de despliegue en entornos cloud y serverless. Colaboré en integraciones de alto tráfico, optimizando el manejo de datos y los flujos de solicitudes. Como Team Lead, guié a un equipo enfocado en voice, asegurando entregas consistentes, calidad técnica y colaboración entre proyectos.",
+        atlas:
+            "Contribuí en Atlas Primer, una experiencia de aprendizaje basada en voz disponible mediante Alexa y Google Assistant. Implementé correcciones y nuevas funcionalidades para el producto, ayudando a mejorar la estabilidad, funcionalidad y experiencia general al interactuar con contenido educativo mediante voz.",
+        inss:
+            "Estuve a cargo del aseguramiento de calidad del módulo de pensiones, validando tanto las reglas de negocio como el comportamiento del sistema mediante pruebas unitarias e integraciones. Construí flujos de pruebas automatizadas integrando Selenium con suites de pruebas en Java, mejorando la confiabilidad y cobertura del sistema. Lideré un equipo de QA para asegurar la validación completa del módulo, incluyendo cálculos financieros complejos. Utilicé SQL para extraer y preparar datos de prueba, transformándolos en entradas estructuradas para pruebas automatizadas. Logramos aumentar el coverage a más del 85%, elevando significativamente la estabilidad del sistema.",
+        atomic:
+            "Lideré el desarrollo frontend como freelancer, definiendo la arquitectura visual de las aplicaciones y asegurando consistencia en toda la interfaz. Implementé sistemas de componentes reutilizables basados en Atomic Design, manteniendo coherencia entre layouts, estilos y comportamiento de la UI. Me enfoqué en construir experiencias de usuario limpias, alineadas y escalables, utilizando herramientas como Adobe XD para diseñar y validar interfaces antes de su implementación.",
+        inssRole1: "Programador · Feb 2021 — Jun 2021",
+        inssRole2: "Integrador de Sistemas · Abr 2018 — Ene 2021",
+        inssRole3: "Digitalizador · Abr 2017 — Mar 2018",
         speakingText:
-            "Como Ingeniero de Software, he tenido la oportunidad de compartir mis conocimientos en distintas presentaciones. Colaboré con ISOC SIGHT Nicaragua para establecer un telecentro enfocado en enseñar tecnología. En 2023 impartí 'Minecraft Hour of Code' en Kids Camp dentro de WordCamp. También he contribuido a CS50x como parte del equipo docente en CS50x.ni.",
-    },
+            "He compartido conocimientos a través de distintas iniciativas educativas y tecnológicas. Colaboré con ISOC SIGHT Nicaragua en la creación de un telecentro enfocado en enseñanza tecnológica, donde impartí formación en desarrollo de videojuegos sin código usando Scratch. En 2023, fui instructor en 'Minecraft Hour of Code' durante el Kids Camp de WordCamp. También formé parte del equipo docente de CS50x en Nicaragua.",
+    }
 };
 
 function changeLanguage(lang) {
