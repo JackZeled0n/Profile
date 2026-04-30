@@ -55,6 +55,8 @@ const texts = {
             "I enjoy building products that feel good, work reliably, and solve real problems.",
         scaleai:
             "Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop evaluation criteria and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.",
+        scaleaiTimeline:
+            "Focused on AI evaluation, prompt analysis, and scenario validation for complex model workflows. I help assess model reasoning, identify failure patterns, and improve the reliability of AI behavior across multi-step tasks.",
         agsoftware:
             "Contracted by AG Software to contribute to internal platforms for Classical Conversations, a global organization that supports homeschooling communities. I develop and maintain scalable web applications and APIs. My responsibilities also include writing unit and integration tests to ensure code reliability and maintainability across services used by thousands of families and educators worldwide.",
         sicsa:
@@ -106,6 +108,8 @@ const texts = {
             "Disfruto crear productos que se ven bien, funcionan mejor y resuelven problemas reales.",
         scaleai:
             "Diseño y evalúo flujos complejos impulsados por inteligencia artificial mediante escenarios bien estructurados, prompts precisos y marcos de validación robustos. Desarrollo criterios de evaluación para analizar razonamiento, precisión y toma de decisiones en múltiples pasos, enfocándome en detectar fallos, mejorar consistencia y asegurar comportamiento confiable a escala.",
+        scaleaiTimeline:
+            "Enfocado en evaluación de IA, análisis de prompts y validación de escenarios para flujos complejos de modelos. Ayudo a evaluar el razonamiento del modelo, identificar patrones de fallo y mejorar la confiabilidad del comportamiento de IA en tareas de múltiples pasos.",
         agsoftware:
             "Colaboré en el desarrollo de plataformas internas para Classical Conversations, una organización global enfocada en educación. Construí y mantuve aplicaciones web y APIs escalables, además de implementar pruebas unitarias e integración para garantizar confiabilidad y mantenibilidad en sistemas utilizados por miles de usuarios.",
         sicsa:
@@ -576,6 +580,40 @@ function initPhotoParallax() {
     });
 }
 
+function initTypingCode() {
+    const codeElement = document.getElementById("roleCode");
+
+    if (!codeElement) return;
+
+    const fullText = codeElement.textContent;
+
+    codeElement.textContent = "";
+
+    let index = 0;
+    let started = false;
+
+    const typeEffect = () => {
+        if (index < fullText.length) {
+            codeElement.textContent += fullText.charAt(index);
+            index++;
+            setTimeout(typeEffect, 35);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                typeEffect();
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    observer.observe(codeElement);
+}
+
 window.addEventListener("load", () => {
     initLenis();
     initTheme();
@@ -593,6 +631,7 @@ window.addEventListener("load", () => {
     initReducedMotionGuard();
     updateScrollCueText();
     initMobileMenu();
+    initTypingCode();
     ScrollTrigger.refresh();
 });
 
