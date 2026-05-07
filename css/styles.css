@@ -624,26 +624,66 @@ body.light-mode .floating-code {
     background: var(--green);
 }
 
+.terminal-card {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .terminal-card pre {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
     white-space: pre-wrap;
 }
 
 .terminal-card code {
+    display: block;
+    max-width: 100%;
     color: #00ff9c;
     font-size: 0.9rem;
     line-height: 1.6;
     font-family: "Fira Code", monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .typing-code code {
-    white-space: pre;
-    border-right: 2px solid #00ff9c;
-    padding-right: 4px;
-    animation: blink 1s infinite;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    border-right: 0;
+    padding-right: 0;
+}
+
+.typing-code code::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 4px;
+    background: #00ff9c;
+    vertical-align: -0.15em;
+    animation: caretBlink 1s infinite;
+}
+
+@keyframes caretBlink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 @keyframes blink {
+
     0%,
     50%,
     100% {
@@ -1354,6 +1394,26 @@ body.light-mode .timeline-index {
 
     .tech-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .terminal-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 22px;
+        border-radius: 28px;
+    }
+
+    .terminal-card pre {
+        overflow-x: hidden;
+        white-space: pre-wrap;
+    }
+
+    .terminal-card code {
+        font-size: 0.76rem;
+        line-height: 1.7;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .tech-box {
