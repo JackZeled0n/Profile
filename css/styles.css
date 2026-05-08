@@ -184,13 +184,14 @@ body.light-mode .nav-link.active {
     display: grid;
     place-items: center;
     padding: 160px 0 120px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    overflow: visible;
+    pointer-events: none;
 }
 
 .gradient-orb {
@@ -228,11 +229,44 @@ body.light-mode .nav-link.active {
 .grid-overlay {
     position: absolute;
     inset: 0;
+    pointer-events: none;
+    opacity: 0.8;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(circle at center, black, transparent 72%);
+        radial-gradient(circle, rgba(255, 255, 255, 0.11) 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1.4px),
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.02) 35%,
+            transparent 75%
+        );
+    background-size:
+        34px 34px,
+        34px 34px,
+        100% 100%;
+    background-position:
+        0 0,
+        17px 17px,
+        0 0;
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.72) 58%,
+        transparent 100%
+    );
+}
+
+body.light-mode .grid-overlay {
+    opacity: 0.55;
+    background-image:
+        radial-gradient(circle, rgba(16, 20, 36, 0.09) 1px, transparent 1.4px),
+        radial-gradient(circle, rgba(16, 20, 36, 0.04) 1px, transparent 1.4px),
+        linear-gradient(
+            to bottom,
+            rgba(16, 20, 36, 0.04) 0%,
+            rgba(16, 20, 36, 0.015) 35%,
+            transparent 75%
+        );
 }
 
 .hero-container {
@@ -821,203 +855,181 @@ body.light-mode .timeline-index {
     margin-bottom: 42px;
 }
 
-.speaking-showcase {
-    position: relative;
-    min-height: 760px;
+.speaking-container {
+    width: min(100% - 40px, 1320px);
 }
 
-.speaking-hero-image {
+.speaking-showcase {
     position: relative;
-    width: min(880px, 78%);
-    height: 560px;
-    margin-left: auto;
+    width: 100%;
+}
+
+.speaking-poster {
+    position: relative;
+    width: 100%;
+    min-height: clamp(560px, 78vh, 820px);
     overflow: hidden;
-    border-radius: 34px;
-    border: 1px solid var(--line);
+    border-radius: clamp(28px, 4vw, 46px);
+    background: #070914;
     box-shadow: var(--shadow);
 }
 
-.speaking-hero-image img {
+.speaking-poster-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 100%;
+    height: 115%;
     object-fit: cover;
     object-position: center;
-
-    filter:
-        contrast(1.08) saturate(1.15) brightness(0.92);
-
-    transform: scale(1.06);
+    transform: scale(1.04);
+    filter: contrast(1.06) saturate(1.06) brightness(0.88);
+    will-change: transform;
 }
 
 .speaking-image-overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     background:
-        linear-gradient(90deg, rgba(7, 9, 20, 0.72) 0%, transparent 58%),
-        linear-gradient(0deg, rgba(7, 9, 20, 0.82) 0%, transparent 52%),
-        radial-gradient(circle at 70% 20%, rgba(255, 157, 69, 0.24), transparent 42%);
+        linear-gradient(90deg,
+            rgba(7, 9, 20, 0.08) 0%,
+            rgba(7, 9, 20, 0.18) 38%,
+            rgba(7, 9, 20, 0.62) 100%),
+        linear-gradient(0deg,
+            rgba(7, 9, 20, 0.5) 0%,
+            transparent 48%);
 }
 
-.speaking-quote {
+.speaking-poster-copy {
     position: absolute;
-    left: 36px;
-    top: 36px;
-    width: min(520px, calc(100% - 72px));
+    z-index: 2;
+    top: 50%;
+    right: clamp(46px, 8vw, 140px);
+    width: min(540px, 38vw);
+    transform: translateY(-50%);
+    will-change: transform;
+}
+
+.speaking-poster-copy h3 {
+    margin: 0;
     color: #fff2c7;
-    font-size: clamp(3rem, 6vw, 6.5rem);
+    font-size: clamp(3.6rem, 7vw, 7.6rem);
     line-height: 0.86;
     font-weight: 950;
     letter-spacing: -0.075em;
     text-transform: uppercase;
-    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 18px 64px rgba(0, 0, 0, 0.5);
 }
 
-.speaking-caption {
+.speaking-poster-meta {
     position: absolute;
-    left: 32px;
-    bottom: 28px;
-    display: inline-grid;
-    gap: 2px;
-    padding: 13px 16px;
-    border-radius: 18px;
-    background: rgba(7, 9, 20, 0.74);
-    color: #fff;
-    backdrop-filter: blur(16px);
+    z-index: 2;
+    left: clamp(22px, 3vw, 42px);
+    bottom: clamp(22px, 3vw, 38px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
 }
 
-.speaking-caption strong {
-    font-size: 0.95rem;
-    font-weight: 950;
-}
-
-.speaking-caption span {
-    color: rgba(255, 255, 255, 0.68);
-    font-size: 0.82rem;
-    font-weight: 750;
-}
-
-.speaking-story-card {
-    position: absolute;
-    left: 0;
-    bottom: 52px;
-    width: min(520px, 48%);
-    padding: clamp(28px, 4vw, 46px);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-xl);
-    background: var(--bg-card-strong);
-    backdrop-filter: blur(24px);
-    box-shadow: var(--shadow);
-}
-
-.story-kicker {
+.speaking-poster-tag,
+.speaking-poster-date {
     display: inline-flex;
-    margin-bottom: 14px;
-    color: var(--orange);
-    font-size: 0.78rem;
-    font-weight: 950;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.speaking-story-card p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 1.04rem;
-    line-height: 1.72;
-}
-
-.speaking-floating-card {
-    position: absolute;
-    overflow: hidden;
-    margin: 0;
-    border: 1px solid var(--line);
-    border-radius: 28px;
-    background: var(--bg-card);
-    box-shadow: var(--shadow);
-}
-
-.speaking-floating-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.speaking-floating-card figcaption {
-    position: absolute;
-    left: 14px;
-    bottom: 14px;
-    padding: 9px 12px;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 16px;
     border-radius: 999px;
-    background: rgba(7, 9, 20, 0.78);
-    color: #fff;
-    font-size: 0.82rem;
-    font-weight: 900;
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
-.certificate-card {
-    right: 0;
-    bottom: 26px;
-    width: 400px;
-    height: 290px;
+.speaking-poster-tag {
+    background: rgba(8, 12, 28, 0.64);
+    color: #fff7ca;
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
-.kids-card {
-    right: 280px;
-    bottom: -28px;
-    width: 400px;
-    height: 280px;
+.speaking-poster-date {
+    background: rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.84rem;
+    font-weight: 700;
 }
 
 @media (max-width: 992px) {
-    .speaking-showcase {
-        min-height: auto;
-        display: grid;
-        gap: 18px;
+    .speaking-poster {
+        min-height: 640px;
     }
 
-    .speaking-hero-image,
-    .speaking-story-card,
-    .speaking-floating-card {
-        position: relative;
-        width: 100%;
-        inset: auto;
+    .speaking-poster-copy {
+        right: auto;
+        left: clamp(24px, 5vw, 46px);
+        width: min(600px, 82vw);
     }
 
-    .speaking-hero-image {
-        height: 520px;
-        margin-left: 0;
-    }
-
-    .speaking-story-card {
-        order: 2;
-    }
-
-    .certificate-card,
-    .kids-card {
-        height: 280px;
+    .speaking-image-overlay {
+        background:
+            linear-gradient(90deg,
+                rgba(7, 9, 20, 0.62) 0%,
+                rgba(7, 9, 20, 0.24) 70%,
+                rgba(7, 9, 20, 0.18) 100%),
+            linear-gradient(0deg,
+                rgba(7, 9, 20, 0.62) 0%,
+                transparent 56%);
     }
 }
 
 @media (max-width: 640px) {
-    .speaking-hero-image {
-        height: 460px;
+    .speaking-container {
+        width: min(100% - 28px, var(--container));
+    }
+
+    .speaking-editorial-header {
+        margin-bottom: 28px;
+    }
+
+    .speaking-poster {
+        min-height: 560px;
         border-radius: 28px;
     }
 
-    .speaking-quote {
-        left: 22px;
-        top: 24px;
-        width: calc(100% - 44px);
+    .speaking-poster-image {
+        object-position: 36% center;
     }
 
-    .speaking-caption {
+    .speaking-poster-copy {
+        top: auto;
+        left: 20px;
+        right: 20px;
+        bottom: 92px;
+        width: auto;
+        transform: none;
+    }
+
+    .speaking-poster-copy h3 {
+        font-size: clamp(2.7rem, 13vw, 4.6rem);
+    }
+
+    .speaking-poster-meta {
         left: 18px;
         bottom: 18px;
+        gap: 6px;
     }
 
-    .speaking-story-card {
-        padding: 26px;
+    .speaking-poster-tag,
+    .speaking-poster-date {
+        padding: 8px 12px;
+    }
+
+    .speaking-poster-tag {
+        font-size: 0.8rem;
+    }
+
+    .speaking-poster-date {
+        font-size: 0.76rem;
     }
 }
 

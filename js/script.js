@@ -38,12 +38,12 @@ const texts = {
         metricYears: "Since 2017",
         metricSinceLabel: "Building software",
         AI: "AI",
-        metricAI: "Evaluation workflows",
+        metricAI: "Quality review workflows",
         metricUI: "Accessible interfaces",
         scrollCue: "Scroll",
         scrollCueMobile: "Swipe",
         currentEyebrow: "Current Mission",
-        currentTitle: "Building reliable AI evaluation systems",
+        currentTitle: "Reviewing AI evaluation quality at scale",
         experienceEyebrow: "Career Timeline",
         experienceTitle: "Experiences",
         speakingEyebrow: "Community & Teaching",
@@ -54,9 +54,9 @@ const texts = {
         contactText:
             "I enjoy building products that feel good, work reliably, and solve real problems.",
         scaleai:
-            "Design and evaluate complex AI-driven workflows by building high-quality scenarios, structured prompts, and robust validation frameworks. I develop evaluation criteria and validation systems to assess model reasoning, accuracy, and multi-step decision-making. My work focuses on uncovering failure patterns, improving consistency, and strengthening the reliability of AI systems at scale.",
+            "I review complex AI evaluation workflows to ensure quality, consistency, and alignment with internal standards. My work focuses on assessing model behavior, identifying evaluation issues, improving feedback quality, and helping strengthen the reliability of AI systems across multi-step tasks.",
         scaleaiTimeline:
-            "Focused on AI evaluation, prompt analysis, and scenario validation for complex model workflows. I help assess model reasoning, identify failure patterns, and improve the reliability of AI behavior across multi-step tasks.",
+            "Review AI evaluation workflows for quality, consistency, and alignment with internal standards. I assess model behavior across complex tasks, identify evaluation issues, and provide feedback that helps improve reliability, clarity, and reviewer alignment at scale.",
         agsoftware:
             "Contracted by AG Software to contribute to internal platforms for Classical Conversations, a global organization that supports homeschooling communities. I develop and maintain scalable web applications and APIs. My responsibilities also include writing unit and integration tests to ensure code reliability and maintainability across services used by thousands of families and educators worldwide.",
         sicsa:
@@ -91,12 +91,12 @@ const texts = {
         metricYears: "Desde 2017",
         metricSinceLabel: "Construyendo software",
         AI: "IA",
-        metricAI: "Evaluación y validación",
+        metricAI: "Revisión de calidad",
         metricUI: "Interfaces accesibles",
         scrollCue: "Scroll",
         scrollCueMobile: "Desliza",
         currentEyebrow: "Enfoque actual",
-        currentTitle: "Construyendo sistemas confiables de evaluación de IA",
+        currentTitle: "Revisando la calidad de evaluaciones de IA a escala",
         experienceEyebrow: "Trayectoria profesional",
         experienceTitle: "Experiencia",
         speakingEyebrow: "Comunidad y enseñanza",
@@ -107,9 +107,9 @@ const texts = {
         contactText:
             "Disfruto crear productos que se ven bien, funcionan mejor y resuelven problemas reales.",
         scaleai:
-            "Diseño y evalúo flujos complejos impulsados por inteligencia artificial mediante escenarios bien estructurados, prompts precisos y marcos de validación robustos. Desarrollo criterios de evaluación para analizar razonamiento, precisión y toma de decisiones en múltiples pasos, enfocándome en detectar fallos, mejorar consistencia y asegurar comportamiento confiable a escala.",
+            "Reviso flujos complejos de evaluación de IA para asegurar calidad, consistencia y alineación con estándares internos. Mi trabajo se enfoca en evaluar el comportamiento de modelos, identificar problemas de evaluación, mejorar la calidad del feedback y fortalecer la confiabilidad de sistemas de IA en tareas de múltiples pasos.",
         scaleaiTimeline:
-            "Enfocado en evaluación de IA, análisis de prompts y validación de escenarios para flujos complejos de modelos. Ayudo a evaluar el razonamiento del modelo, identificar patrones de fallo y mejorar la confiabilidad del comportamiento de IA en tareas de múltiples pasos.",
+            "Reviso flujos de evaluación de IA para asegurar calidad, consistencia y alineación con estándares internos. Evalúo el comportamiento de modelos en tareas complejas, identifico problemas de evaluación y doy feedback que ayuda a mejorar la confiabilidad, claridad y alineación entre reviewers a escala.",
         agsoftware:
             "Colaboré en el desarrollo de plataformas internas para Classical Conversations, una organización global enfocada en educación. Construí y mantuve aplicaciones web y APIs escalables, además de implementar pruebas unitarias e integración para garantizar confiabilidad y mantenibilidad en sistemas utilizados por miles de usuarios.",
         sicsa:
@@ -554,32 +554,6 @@ function initMobileMenu() {
     });
 }
 
-function initPhotoParallax() {
-    gsap.utils.toArray(".speaking-floating-card").forEach((photo, index) => {
-        gsap.to(photo, {
-            scrollTrigger: {
-                trigger: ".speaking-section",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-            },
-            y: index % 2 === 0 ? -60 : 70,
-            ease: "none",
-        });
-    });
-
-    gsap.to(".speaking-hero-image img", {
-        scrollTrigger: {
-            trigger: ".speaking-section",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-        },
-        scale: 1.08,
-        ease: "none",
-    });
-}
-
 function initTypingCode() {
     const codeElement = document.getElementById("roleCode");
 
@@ -612,6 +586,37 @@ function initTypingCode() {
     });
 
     observer.observe(codeElement);
+}
+
+function initPhotoParallax() {
+    const speakingSection = document.querySelector(".speaking-section");
+    const heroImage = document.querySelector(".speaking-poster-image");
+    const heroCopy = document.querySelector(".speaking-poster-copy");
+
+    if (!speakingSection || !heroImage || !heroCopy) return;
+
+    gsap.to(heroImage, {
+        scrollTrigger: {
+            trigger: speakingSection,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        yPercent: -8,
+        scale: 1.08,
+        ease: "none",
+    });
+
+    gsap.to(heroCopy, {
+        scrollTrigger: {
+            trigger: speakingSection,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+        yPercent: -10,
+        ease: "none",
+    });
 }
 
 window.addEventListener("load", () => {
