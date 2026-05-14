@@ -19,6 +19,8 @@
     --radius-md: 16px;
     --container: 1180px;
     --nav-height: 68px;
+    --mobile-menu-offset: 18px;
+    --mobile-menu-size: 58px;
 }
 
 body.light-mode {
@@ -38,10 +40,15 @@ body.light-mode {
 
 html {
     scroll-behavior: auto;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     margin: 0;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
     font-family: Inter, InterVariable, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1204,8 +1211,9 @@ body.light-mode .timeline-index {
 }
 
 .mobile-menu-button {
-    width: 58px;
-    height: 58px;
+    width: var(--mobile-menu-size);
+    height: var(--mobile-menu-size);
+
     border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.08);
@@ -1214,8 +1222,8 @@ body.light-mode .timeline-index {
     box-shadow:
         0 14px 42px rgba(0, 0, 0, 0.24),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    cursor: pointer;
 
+    cursor: pointer;
     display: none;
     place-items: center;
     align-content: center;
@@ -1235,30 +1243,53 @@ body.light-mode .timeline-index {
     position: fixed;
     inset: 0;
     z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     padding: 32px;
+    overflow: hidden;
     background:
         radial-gradient(circle at 20% 0%, rgba(58, 124, 255, 0.22), transparent 32%),
         radial-gradient(circle at 80% 10%, rgba(255, 78, 205, 0.18), transparent 30%),
         var(--bg);
     color: var(--text);
-    transform: translateY(-100%);
+    display: block;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    transform: translateY(-100%);
+    transition:
+        opacity 0.28s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+html.menu-open,
+body.menu-open {
+    overflow: hidden;
+    height: 100%;
 }
 
 .mobile-menu.is-open {
-    display: block;
+    visibility: visible;
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
 }
 
 .mobile-menu-close {
-    position: absolute;
-    top: 18px;
-    right: 30px;
-    width: 58px;
-    height: 58px;
+    position: fixed;
+    top: var(--mobile-menu-offset);
+    right: var(--mobile-menu-offset);
+    z-index: 2100;
+
+    width: var(--mobile-menu-size);
+    height: var(--mobile-menu-size);
+
+    display: grid;
+    place-items: center;
+    padding: 0;
+
     border: 1px solid var(--line);
     border-radius: 999px;
     background: var(--bg-card-strong);
@@ -1270,18 +1301,30 @@ body.light-mode .timeline-index {
 .mobile-menu-nav {
     display: grid;
     gap: 14px;
+    width: 100%;
+    min-width: 0;
     margin-top: 96px;
 }
 
 .mobile-menu-link {
+    display: block;
+    max-width: 100%;
+
     color: var(--text);
     text-decoration: none;
-    font-size: clamp(3rem, 13vw, 5.8rem);
+
+    font-size: clamp(2.45rem, 10.5vw, 4.6rem);
     line-height: 0.92;
     font-weight: 950;
     letter-spacing: -0.075em;
     text-transform: uppercase;
+
     opacity: 0.4;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+
     transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
@@ -1338,6 +1381,7 @@ body.light-mode .timeline-index {
     }
 
     .site-header {
+        position: fixed;
         width: auto;
         height: auto;
         top: 18px;
@@ -1349,15 +1393,20 @@ body.light-mode .timeline-index {
         background: transparent;
         box-shadow: none;
         backdrop-filter: none;
+        z-index: 1500;
+    }
+
+    .mobile-menu-button {
+        position: fixed;
+        top: var(--mobile-menu-offset);
+        right: var(--mobile-menu-offset);
+        z-index: 1600;
+        display: grid;
     }
 
     .site-nav,
     .header-actions {
         display: none;
-    }
-
-    .mobile-menu-button {
-        display: grid;
     }
 
     .hero-title {
@@ -1450,6 +1499,27 @@ body.light-mode .timeline-index {
 
     .scroll-cue {
         bottom: 15px;
+    }
+
+
+    .mobile-menu {
+        padding: 28px 22px;
+    }
+
+    .mobile-menu-nav {
+        margin-top: 92px;
+        gap: 12px;
+    }
+
+    .mobile-menu-link {
+        font-size: clamp(2.4rem, 10vw, 3.8rem);
+        letter-spacing: -0.08em;
+    }
+
+    .mobile-menu-actions {
+        left: 22px;
+        right: 22px;
+        bottom: 26px;
     }
 }
 
