@@ -32,7 +32,7 @@
          <a href="#home" class="nav-link active" data-section-link="home">Me</a>
          <a href="#current" class="nav-link" data-section-link="current">Current</a>
          <a href="#experience" class="nav-link" data-section-link="experience" data-key="experienceMenu">Experiences</a>
-         <a href="#speaking" class="nav-link" data-section-link="speaking" data-key="speakingMenu">Speaking</a>
+         <a href="#teaching" class="nav-link" data-section-link="teaching" data-key="speakingMenu">Teaching</a>
          <a href="#technologies" class="nav-link" data-section-link="technologies">Stack</a>
       </nav>
 
@@ -61,7 +61,7 @@
          <a href="#home" class="mobile-menu-link">Me</a>
          <a href="#current" class="mobile-menu-link">Current</a>
          <a href="#experience" class="mobile-menu-link" data-key="experienceMenu">Experiences</a>
-         <a href="#speaking" class="mobile-menu-link" data-key="speakingMenu">Speaking</a>
+         <a href="#teaching" class="mobile-menu-link" data-key="speakingMenu">Teaching</a>
          <a href="#technologies" class="mobile-menu-link">Stack</a>
       </nav>
 
@@ -554,17 +554,17 @@ role.current = {
          </div>
       </section>
 
-      <!-- SPEAKING -->
-      <section class="speaking-section speaking-editorial section-panel" id="speaking">
+      <!-- TEACHING -->
+      <section class="speaking-section speaking-editorial section-panel" id="teaching">
          <div class="container speaking-container">
             <div class="speaking-editorial-header">
-               <span class="section-eyebrow" data-key="speakingEyebrow">Community & Teaching</span>
-               <h2 class="section-title" data-key="speakingTitle">Speaking</h2>
+               <span class="section-eyebrow" data-key="speakingEyebrow">Community</span>
+               <h2 class="section-title" data-key="speakingTitle">Teaching</h2>
             </div>
 
             <div class="speaking-showcase reveal-card">
-               <div class="speaking-poster">
-                  <div class="speaking-poster-frame">
+               <article class="speaking-polaroid" aria-label="Teaching highlight">
+                  <div class="speaking-polaroid-photo">
                      <img class="speaking-poster-image" src="img/ieee.jpg"
                         alt="Teaching technology at ISOC SIGHT Nicaragua Telecenter" />
 
@@ -578,12 +578,70 @@ role.current = {
                         </h3>
                      </div>
 
-                     <div class="speaking-poster-meta">
-                        <span class="speaking-poster-tag">ISOC SIGHT Nicaragua</span>
-                        <span class="speaking-poster-date">Telecenter · 2017</span>
-                     </div>
                   </div>
-               </div>
+
+                  <footer class="speaking-polaroid-caption">
+                     <span class="speaking-poster-tag">ISOC SIGHT Nicaragua</span>
+                     <span class="speaking-poster-date">Telecenter · 2017</span>
+                  </footer>
+               </article>
+
+               <article class="speaking-highlight cs50-feature" aria-label="CS50 teaching recognition">
+                  <div class="speaking-highlight-copy cs50-feature-copy">
+                     <span class="cs50-kicker" data-key="cs50Role">CS50 Certificate</span>
+
+                     <h3 data-key="cs50Title">
+                        A foundation built through teaching.
+                     </h3>
+
+                     <p data-key="cs50Text">
+                        This recognition represents more than a certificate. It reflects my experience helping learners
+                        understand
+                        programming fundamentals, supporting a rigorous computer science learning environment, and
+                        turning technical
+                        concepts into clear, approachable lessons.
+                     </p>
+
+                     <div class="cs50-value-grid" aria-label="CS50 teaching impact">
+                        <div class="cs50-value-card">
+                           <span class="cs50-value-number">01</span>
+                           <strong data-key="cs50ValueOneTitle">Teaching support</strong>
+                           <p data-key="cs50ValueOneText">Guided students through programming fundamentals and
+                              problem-solving.</p>
+                        </div>
+
+                        <div class="cs50-value-card">
+                           <span class="cs50-value-number">02</span>
+                           <strong data-key="cs50ValueTwoTitle">Clear communication</strong>
+                           <p data-key="cs50ValueTwoText">Translated complex concepts into practical and accessible
+                              explanations.</p>
+                        </div>
+
+                        <div class="cs50-value-card">
+                           <span class="cs50-value-number">03</span>
+                           <strong data-key="cs50ValueThreeTitle">Community learning</strong>
+                           <p data-key="cs50ValueThreeText">Contributed to a local learning experience connected to a
+                              global program.</p>
+                        </div>
+                     </div>
+
+                     <footer class="speaking-highlight-meta cs50-feature-meta">
+                        <span class="speaking-highlight-name" data-key="cs50Org">Harvard University</span>
+                     </footer>
+                  </div>
+
+                  <figure class="speaking-highlight-media cs50-certificate-media">
+                     <img class="speaking-highlight-image" src="img/CS50x.jpg"
+                        alt="CS50 Certificate from Harvard University awarded to Jake Antonio Ruiz Zeledón" />
+
+                     <a class="cs50-certificate-button"
+                        href="https://cs50.harvard.edu/certificates/cb6a2652-f690-4663-ab3a-e1e1a2441147"
+                        target="_blank" rel="noopener noreferrer" data-key="cs50Button">
+                        View certificate
+                        <i class="bi bi-arrow-up-right"></i>
+                     </a>
+                  </figure>
+               </article>
             </div>
          </div>
       </section>
@@ -592,7 +650,7 @@ role.current = {
       <section class="technologies-section section-panel" id="technologies">
          <div class="container">
             <div class="section-heading center">
-               <span class="section-eyebrow" data-key="technologiesEyebrow">Toolbox</span>
+               <span class="section-eyebrow" data-key="technologiesEyebrow">Tech</span>
                <h2 class="section-title" data-key="technologiesTitle">Stack</h2>
             </div>
 
@@ -646,10 +704,6 @@ role.current = {
                   <a href="mailto:jackiezeledon@gmail.com" class="btn-primary-glow">
                      <i class="bi bi-envelope"></i>
                      Email me
-                  </a>
-                  <a href="https://github.com/JackZeled0n" target="_blank" class="btn-ghost">
-                     <i class="bi bi-github"></i>
-                     GitHub
                   </a>
                </div>
             </div>

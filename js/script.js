@@ -27,7 +27,7 @@ let currentLanguage = "en";
 const texts = {
     en: {
         experienceMenu: "Experiences",
-        speakingMenu: "Speaking",
+        speakingMenu: "Teaching",
         heroKicker: "Available for product, frontend and AI evaluation work",
         heroRole: "Fullstack Engineer",
         heroRoleSecond: "Frontend Specialist",
@@ -46,9 +46,9 @@ const texts = {
         currentTitle: "Reviewing AI evaluation quality at scale",
         experienceEyebrow: "Career Timeline",
         experienceTitle: "Experiences",
-        speakingEyebrow: "Community & Teaching",
-        speakingTitle: "Speaking",
-        technologiesEyebrow: "Toolbox",
+        speakingEyebrow: "Community",
+        speakingTitle: "Teaching",
+        technologiesEyebrow: "Tech",
         contactEyebrow: "Let’s build",
         contactTitle: "Reliable systems. Beautiful interfaces. Useful AI.",
         contactText:
@@ -75,12 +75,23 @@ const texts = {
         inssRole2: "System Integrator · Apr 2018 — Jan 2021",
         inssRole3: "Digitalization Operator · Apr 2017 — Mar 2018",
         speakingText:
-            "As a Software Engineer, I've had the opportunity to share my knowledge at various speaking engagements. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding contributions to CS50x as a member of the teaching staff at CS50x.ni.",
+            "As a Software Engineer, I've had the opportunity to share my knowledge through teaching. I collaborated with ISOC SIGHT Nicaragua to establish a telecenter aimed at teaching technology, where I was responsible for teaching participants how to create video games without code using Scratch. In 2023, I taught a course called 'Minecraft Hour of Code' at the Kids Camp within WordCamp. Additionally, I've made outstanding contributions to CS50x as a member of the teaching staff at CS50x.ni.",
+        cs50Role: "CS50 Certificate",
+        cs50Title: "A foundation built through teaching.",
+        cs50Text:
+            "This recognition represents more than a certificate. It reflects my experience helping learners understand programming fundamentals, supporting a rigorous computer science learning environment, and turning technical concepts into clear, approachable lessons.",
+        cs50ValueOneTitle: "Teaching support",
+        cs50ValueOneText: "Guided students through programming fundamentals and problem-solving.",
+        cs50ValueTwoTitle: "Clear communication",
+        cs50ValueTwoText: "Translated complex concepts into practical and accessible explanations.",
+        cs50ValueThreeTitle: "Community learning",
+        cs50ValueThreeText: "Contributed to a local learning experience connected to a global program.",
+        cs50Org: "Harvard University",
     },
 
     sp: {
         experienceMenu: "Experiencia",
-        speakingMenu: "Ponencias",
+        speakingMenu: "Enseñanza",
         heroKicker: "Disponible para desarrollo frontend, producto y evaluación de IA",
         heroRole: "Ingeniero Fullstack",
         heroRoleSecond: "Especialista Frontend",
@@ -99,8 +110,8 @@ const texts = {
         currentTitle: "Revisando la calidad de evaluaciones de IA a escala",
         experienceEyebrow: "Trayectoria profesional",
         experienceTitle: "Experiencia",
-        speakingEyebrow: "Comunidad y enseñanza",
-        speakingTitle: "Ponencias",
+        speakingEyebrow: "Comunidad",
+        speakingTitle: "Enseñanza",
         technologiesEyebrow: "Tecnologías",
         contactEyebrow: "Construyamos",
         contactTitle: "Sistemas confiables. Interfaces de alto nivel. IA útil.",
@@ -129,6 +140,17 @@ const texts = {
         inssRole3: "Digitalizador · Abr 2017 — Mar 2018",
         speakingText:
             "He compartido conocimientos a través de distintas iniciativas educativas y tecnológicas. Colaboré con ISOC SIGHT Nicaragua en la creación de un telecentro enfocado en enseñanza tecnológica, donde impartí formación en desarrollo de videojuegos sin código usando Scratch. En 2023, fui instructor en 'Minecraft Hour of Code' durante el Kids Camp de WordCamp. También formé parte del equipo docente de CS50x en Nicaragua.",
+        cs50Role: "Certificado CS50",
+        cs50Title: "Una base construida desde la enseñanza.",
+        cs50Text:
+            "Este reconocimiento representa más que un certificado. Refleja mi experiencia ayudando a estudiantes a comprender fundamentos de programación, apoyando un entorno riguroso de aprendizaje en ciencias de la computación y convirtiendo conceptos técnicos en explicaciones claras y accesibles.",
+        cs50ValueOneTitle: "Apoyo docente",
+        cs50ValueOneText: "Guié a estudiantes en fundamentos de programación y resolución de problemas.",
+        cs50ValueTwoTitle: "Comunicación clara",
+        cs50ValueTwoText: "Convertí conceptos complejos en explicaciones prácticas y accesibles.",
+        cs50ValueThreeTitle: "Aprendizaje comunitario",
+        cs50ValueThreeText: "Contribuí a una experiencia local conectada con un programa global.",
+        cs50Org: "Universidad de Harvard",
     }
 };
 

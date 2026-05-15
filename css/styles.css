@@ -430,12 +430,10 @@ body.menu-open {
     background-image:
         radial-gradient(circle, rgba(255, 255, 255, 0.11) 1px, transparent 1.4px),
         radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1.4px),
-        linear-gradient(
-            to bottom,
+        linear-gradient(to bottom,
             rgba(255, 255, 255, 0.05) 0%,
             rgba(255, 255, 255, 0.02) 35%,
-            transparent 75%
-        );
+            transparent 75%);
     background-size:
         34px 34px,
         34px 34px,
@@ -444,12 +442,10 @@ body.menu-open {
         0 0,
         17px 17px,
         0 0;
-    mask-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.72) 58%,
-        transparent 100%
-    );
+    mask-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.72) 58%,
+            transparent 100%);
 }
 
 body.light-mode .grid-overlay {
@@ -457,12 +453,10 @@ body.light-mode .grid-overlay {
     background-image:
         radial-gradient(circle, rgba(16, 20, 36, 0.09) 1px, transparent 1.4px),
         radial-gradient(circle, rgba(16, 20, 36, 0.04) 1px, transparent 1.4px),
-        linear-gradient(
-            to bottom,
+        linear-gradient(to bottom,
             rgba(16, 20, 36, 0.04) 0%,
             rgba(16, 20, 36, 0.015) 35%,
-            transparent 75%
-        );
+            transparent 75%);
 }
 
 .hero-container {
@@ -1046,7 +1040,7 @@ body.light-mode .timeline-index {
 }
 
 /* =============================================================================
-   9. Speaking
+   9. Teaching
    ============================================================================= */
 
 .speaking-editorial {
@@ -1063,17 +1057,54 @@ body.light-mode .timeline-index {
 
 .speaking-showcase {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(48px, 8vw, 88px);
     width: 100%;
+    padding: clamp(8px, 2vw, 24px) 0;
 }
 
-.speaking-poster {
+.speaking-polaroid {
     position: relative;
-    width: 100%;
-    min-height: clamp(560px, 78vh, 820px);
+    width: min(100%, 920px);
+    margin: 0 auto;
+    padding: clamp(14px, 2.2vw, 22px);
+    padding-bottom: clamp(18px, 3vw, 28px);
+    background: #f4f1ea;
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    border-radius: 3px;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.06),
+        0 18px 50px rgba(0, 0, 0, 0.28),
+        0 42px 100px rgba(0, 0, 0, 0.18);
+    transform: rotate(-1.15deg);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.speaking-polaroid:hover {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.08),
+        0 28px 70px rgba(0, 0, 0, 0.32),
+        0 52px 120px rgba(0, 0, 0, 0.22);
+}
+
+body.light-mode .speaking-polaroid {
+    background: #fff;
+    border-color: rgba(16, 20, 36, 0.08);
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 18px 50px rgba(0, 64, 128, 0.14),
+        0 42px 90px rgba(0, 64, 128, 0.1);
+}
+
+.speaking-polaroid-photo {
+    position: relative;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
-    border-radius: clamp(28px, 4vw, 46px);
+    border-radius: 2px;
     background: #070914;
-    box-shadow: var(--shadow);
 }
 
 .speaking-poster-image {
@@ -1083,8 +1114,9 @@ body.light-mode .timeline-index {
     height: 115%;
     object-fit: cover;
     object-position: center;
-    transform: scale(1.04);
-    filter: contrast(1.06) saturate(1.06) brightness(0.88);
+    transform: scale(1.03);
+    transform-origin: center center;
+    filter: contrast(1.06) saturate(1.08) brightness(0.92);
     will-change: transform;
 }
 
@@ -1094,145 +1126,342 @@ body.light-mode .timeline-index {
     z-index: 1;
     background:
         linear-gradient(90deg,
-            rgba(7, 9, 20, 0.08) 0%,
-            rgba(7, 9, 20, 0.18) 38%,
-            rgba(7, 9, 20, 0.62) 100%),
+            rgba(7, 9, 20, 0.12) 0%,
+            rgba(7, 9, 20, 0.22) 42%,
+            rgba(7, 9, 20, 0.58) 100%),
         linear-gradient(0deg,
-            rgba(7, 9, 20, 0.5) 0%,
-            transparent 48%);
+            rgba(7, 9, 20, 0.45) 0%,
+            transparent 52%);
+    pointer-events: none;
 }
 
 .speaking-poster-copy {
     position: absolute;
     z-index: 2;
     top: 50%;
-    right: clamp(46px, 8vw, 140px);
-    width: min(540px, 38vw);
+    right: clamp(28px, 5vw, 72px);
+    width: min(480px, 42%);
     transform: translateY(-50%);
     will-change: transform;
+    pointer-events: none;
 }
 
 .speaking-poster-copy h3 {
     margin: 0;
     color: #fff2c7;
-    font-size: clamp(3.6rem, 7vw, 7.6rem);
-    line-height: 0.86;
+    font-size: clamp(2.4rem, 5.5vw, 5.2rem);
+    line-height: 0.9;
     font-weight: 950;
-    letter-spacing: -0.075em;
+    letter-spacing: -0.06em;
     text-transform: uppercase;
-    text-shadow: 0 18px 64px rgba(0, 0, 0, 0.5);
+    text-shadow:
+        0 2px 0 rgba(7, 9, 20, 0.35),
+        0 18px 48px rgba(0, 0, 0, 0.45);
 }
 
-.speaking-poster-meta {
-    position: absolute;
-    z-index: 2;
-    left: clamp(22px, 3vw, 42px);
-    bottom: clamp(22px, 3vw, 38px);
+.speaking-polaroid-caption {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-}
-
-.speaking-poster-tag,
-.speaking-poster-date {
-    display: inline-flex;
     align-items: center;
-    width: fit-content;
-    padding: 10px 16px;
-    border-radius: 999px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-top: clamp(16px, 2.5vw, 22px);
+    padding: 0 clamp(4px, 1vw, 10px);
 }
 
 .speaking-poster-tag {
-    background: rgba(8, 12, 28, 0.64);
-    color: #fff7ca;
-    font-size: 0.9rem;
-    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    color: #101424;
+    font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .speaking-poster-date {
-    background: rgba(255, 255, 255, 0.14);
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.84rem;
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #fff2c7;
+    color: #101424;
+    font-size: clamp(0.78rem, 1.4vw, 0.88rem);
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 992px) {
-    .speaking-poster {
-        min-height: 640px;
-    }
-
-    .speaking-poster-copy {
-        right: auto;
-        left: clamp(24px, 5vw, 46px);
-        width: min(600px, 82vw);
-    }
-
-    .speaking-image-overlay {
-        background:
-            linear-gradient(90deg,
-                rgba(7, 9, 20, 0.62) 0%,
-                rgba(7, 9, 20, 0.24) 70%,
-                rgba(7, 9, 20, 0.18) 100%),
-            linear-gradient(0deg,
-                rgba(7, 9, 20, 0.62) 0%,
-                transparent 56%);
-    }
+body.light-mode .speaking-poster-tag {
+    color: #101424;
 }
 
-@media (max-width: 640px) {
-    .speaking-container {
-        width: min(100% - 28px, var(--container));
-    }
+body.light-mode .speaking-poster-date {
+    background: #ffe9a8;
+    color: #101424;
+}
 
-    .speaking-editorial-header {
-        margin-bottom: 28px;
-    }
+.speaking-highlight {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 64px);
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: clamp(28px, 4vw, 52px);
+    border: 1px solid rgba(255, 157, 69, 0.18);
+    border-radius: calc(var(--radius-xl) + 6px);
+    background:
+        radial-gradient(circle at 12% 8%, rgba(255, 157, 69, 0.2), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(58, 124, 255, 0.18), transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+        rgba(255, 255, 255, 0.035);
+    box-shadow:
+        0 28px 90px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+}
 
-    .speaking-poster {
-        min-height: 560px;
-        border-radius: 28px;
-    }
+body.light-mode .speaking-highlight {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(255, 157, 69, 0.16), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(58, 124, 255, 0.1), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.3)),
+        rgba(255, 255, 255, 0.26);
+    box-shadow:
+        0 28px 90px rgba(16, 20, 36, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
 
-    .speaking-poster-image {
-        object-position: 36% center;
-    }
+.speaking-highlight-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: clamp(22px, 3vw, 32px);
+}
 
-    .speaking-poster-copy {
-        top: auto;
-        left: 20px;
-        right: 20px;
-        bottom: 92px;
-        width: auto;
-        transform: none;
-    }
+.speaking-highlight-name {
+    color: var(--text);
+    font-size: clamp(1rem, 1.6vw, 1.12rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
 
-    .speaking-poster-copy h3 {
-        font-size: clamp(2.7rem, 13vw, 4.6rem);
-    }
+.speaking-highlight-media {
+    margin: 0;
+}
 
-    .speaking-poster-meta {
-        left: 18px;
-        bottom: 18px;
-        gap: 6px;
-    }
+.speaking-highlight-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: var(--shadow);
+}
 
-    .speaking-poster-tag,
-    .speaking-poster-date {
-        padding: 8px 12px;
-    }
+.cs50-feature {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
 
-    .speaking-poster-tag {
-        font-size: 0.8rem;
-    }
+.cs50-feature::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -38% -12%;
+    width: 420px;
+    height: 420px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(255, 157, 69, 0.26), transparent 68%);
+    filter: blur(4px);
+    pointer-events: none;
+    z-index: 0;
+}
 
-    .speaking-poster-date {
-        font-size: 0.76rem;
-    }
+.cs50-feature::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(300deg, rgba(58, 124, 255, 0.11), transparent 42%);
+    opacity: 0.85;
+    z-index: 1;
+}
+
+body.light-mode .cs50-feature::after {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.22), transparent 34%),
+        linear-gradient(300deg, rgba(58, 124, 255, 0.08), transparent 42%);
+    opacity: 0.75;
+}
+
+.cs50-feature-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.cs50-certificate-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cs50-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 18px;
+    padding: 9px 14px;
+    border: 1px solid rgba(255, 157, 69, 0.36);
+    border-radius: 999px;
+    background: rgba(255, 157, 69, 0.14);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cs50-feature-copy h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(2.2rem, 4.8vw, 5rem);
+    line-height: 0.98;
+    font-weight: 950;
+    letter-spacing: -0.07em;
+}
+
+.cs50-feature-copy>p {
+    margin: 24px 0 0;
+    max-width: 620px;
+    color: var(--text-muted);
+    font-size: clamp(1rem, 1.25vw, 1.14rem);
+    line-height: 1.8;
+}
+
+.cs50-value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.cs50-value-card {
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body.light-mode .cs50-value-card {
+    border-color: rgba(16, 20, 36, 0.1);
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.cs50-value-number {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--orange);
+    font-size: 0.78rem;
+    font-weight: 950;
+    letter-spacing: 0.12em;
+}
+
+.cs50-value-card strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.cs50-value-card p {
+    margin: 8px 0 0;
+    color: var(--text-muted);
+    font-size: 0.86rem;
+    line-height: 1.55;
+}
+
+.cs50-feature-meta {
+    margin-top: 24px;
+}
+
+.cs50-certificate-media::after {
+    content: "CS50x.ni";
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(7, 9, 20, 0.82);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    backdrop-filter: blur(12px);
+}
+
+.cs50-certificate-button {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    margin: 18px auto 0;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 157, 69, 0.36);
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--orange), #ffbd72);
+    color: #101424;
+    font-size: 0.86rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    box-shadow:
+        0 14px 36px rgba(255, 157, 69, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+}
+
+.cs50-certificate-button:hover {
+    transform: translateY(-3px);
+    color: #101424;
+    filter: brightness(1.04);
+    box-shadow:
+        0 18px 46px rgba(255, 157, 69, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.cs50-certificate-button i {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+body.light-mode .cs50-certificate-button {
+    background: linear-gradient(135deg, #101424, #2b3042);
+    border-color: rgba(16, 20, 36, 0.12);
+    color: #fff;
+    box-shadow:
+        0 14px 34px rgba(16, 20, 36, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+body.light-mode .cs50-certificate-button:hover {
+    color: #fff;
+}
+
+body.light-mode .cs50-certificate-media::after {
+    background: rgba(16, 20, 36, 0.82);
 }
 
 /* =============================================================================
@@ -1268,6 +1497,12 @@ body.light-mode .timeline-index {
     width: 52px;
     height: 52px;
     object-fit: contain;
+    filter: grayscale(1) saturate(0) contrast(1.05);
+    opacity: 0.72;
+    transition:
+        filter 0.28s ease,
+        opacity 0.28s ease,
+        transform 0.28s ease;
 }
 
 .tech-box span {
@@ -1276,6 +1511,11 @@ body.light-mode .timeline-index {
     font-weight: 850;
 }
 
+.tech-box:hover img {
+    filter: grayscale(0) saturate(1) contrast(1);
+    opacity: 1;
+    transform: scale(1.08);
+}
 /* =============================================================================
    11. Contact & back to top
    ============================================================================= */
@@ -1429,6 +1669,51 @@ body.light-mode .timeline-index {
         grid-template-columns: 1fr;
     }
 
+    .speaking-polaroid {
+        transform: rotate(-0.6deg);
+    }
+
+    .speaking-polaroid-photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    .speaking-poster-copy {
+        right: auto;
+        left: clamp(24px, 5vw, 46px);
+        width: min(520px, 78vw);
+    }
+
+    .speaking-image-overlay {
+        background:
+            linear-gradient(90deg,
+                rgba(7, 9, 20, 0.55) 0%,
+                rgba(7, 9, 20, 0.2) 68%,
+                rgba(7, 9, 20, 0.12) 100%),
+            linear-gradient(0deg,
+                rgba(7, 9, 20, 0.5) 0%,
+                transparent 54%);
+    }
+
+    .speaking-highlight {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: clamp(24px, 4vw, 36px);
+    }
+
+    .speaking-highlight-media {
+        order: -1;
+    }
+
+    .cs50-value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cs50-feature::before {
+        inset: auto auto -30% -20%;
+        width: 320px;
+        height: 320px;
+    }
+
     .tech-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1524,6 +1809,93 @@ body.light-mode .timeline-index {
         flex-direction: column;
     }
 
+    .speaking-container {
+        width: min(100% - 28px, var(--container));
+    }
+
+    .speaking-editorial-header {
+        margin-bottom: 28px;
+    }
+
+    .speaking-polaroid {
+        transform: none;
+        padding: 12px;
+        padding-bottom: 16px;
+    }
+
+    .speaking-polaroid:hover {
+        transform: translateY(-4px);
+    }
+
+    .speaking-polaroid-photo {
+        aspect-ratio: 3 / 4;
+    }
+
+    .speaking-poster-image {
+        object-position: 36% center;
+    }
+
+    .speaking-poster-copy {
+        top: auto;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        width: auto;
+        transform: none;
+    }
+
+    .speaking-poster-copy h3 {
+        font-size: clamp(2rem, 11vw, 3.4rem);
+    }
+
+    .speaking-polaroid-caption {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 14px;
+    }
+
+    .speaking-poster-tag {
+        font-size: 0.78rem;
+    }
+
+    .speaking-poster-date {
+        padding: 8px 14px;
+        font-size: 0.76rem;
+    }
+
+    .speaking-highlight {
+        padding: 20px;
+    }
+
+    .cs50-feature-copy h3 {
+        font-size: clamp(2.1rem, 11vw, 3.6rem);
+    }
+
+    .cs50-kicker {
+        font-size: 0.68rem;
+    }
+
+    .cs50-value-card {
+        padding: 14px;
+    }
+
+    .cs50-certificate-media::after {
+        right: 12px;
+        bottom: 12px;
+        font-size: 0.7rem;
+    }
+
+    .cs50-feature::before {
+        inset: auto auto -26% -28%;
+        width: 260px;
+        height: 260px;
+    }
+
+    .cs50-feature::after {
+        opacity: 0.55;
+    }
+
     .tech-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -1605,5 +1977,10 @@ body.light-mode .timeline-index {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
+    }
+
+    .speaking-polaroid,
+    .speaking-polaroid:hover {
+        transform: none;
     }
 }
