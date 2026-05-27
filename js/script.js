@@ -44,6 +44,10 @@ const texts = {
         scrollCueMobile: "Swipe",
         currentEyebrow: "Current Mission",
         currentTitle: "Reviewing AI evaluation quality at scale",
+        currentVideoEyebrow: "Data in use",
+        currentVideoTitle: "Turning AI signals into stronger systems",
+        currentVideoText:
+            "A visual reference for the kind of evaluation work I support: reviewing complex model behavior, identifying patterns, reducing ambiguity, and turning feedback into clearer, more reliable AI systems.",
         experienceEyebrow: "Career Timeline",
         experienceTitle: "Experiences",
         speakingEyebrow: "Community",
@@ -108,6 +112,10 @@ const texts = {
         scrollCueMobile: "Desliza",
         currentEyebrow: "Enfoque actual",
         currentTitle: "Revisando la calidad de evaluaciones de IA a escala",
+        currentVideoEyebrow: "Datos en uso",
+        currentVideoTitle: "Convirtiendo señales de IA en sistemas más confiables",
+        currentVideoText:
+            "Una referencia visual del tipo de evaluación que apoyo: revisar comportamientos complejos de modelos, identificar patrones, reducir ambigüedad y convertir feedback en sistemas de IA más claros y confiables.",
         experienceEyebrow: "Trayectoria profesional",
         experienceTitle: "Experiencia",
         speakingEyebrow: "Comunidad",
