@@ -1105,6 +1105,44 @@ body.light-mode .timeline-index {
     color: #10b981;
 }
 
+.current-card .badge-cloud,
+.timeline-content .badge-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.current-card .badge-cloud span,
+.timeline-content .badge-cloud span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 8px 13px;
+    border-radius: 999px;
+
+    color: var(--blue-dark);
+    background: rgba(58, 124, 255, 0.1);
+    border: 1px solid rgba(58, 124, 255, 0.22);
+
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+body:not(.light-mode) .current-card .badge-cloud span,
+body:not(.light-mode) .timeline-content .badge-cloud span {
+    color: #dce7ff;
+    background: rgba(58, 124, 255, 0.16);
+    border-color: rgba(116, 255, 182, 0.18);
+}
+
 /* =============================================================================
    9. Teaching
    ============================================================================= */
@@ -1886,6 +1924,18 @@ body.light-mode .cs50-certificate-media::after {
 
     .timeline-meta {
         flex-direction: column;
+    }
+
+    .current-card .badge-cloud,
+    .timeline-content .badge-cloud {
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .current-card .badge-cloud span,
+    .timeline-content .badge-cloud span {
+        padding: 8px 11px;
+        font-size: 0.76rem;
     }
 
     .speaking-container {
